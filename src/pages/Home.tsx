@@ -35,7 +35,7 @@ const StyledRouterLink = styled(RouterLink)`
 export const Home = () => {
   return (
     <SingleColumnLayout>
-      <H2>FROG Onboarder</H2>
+      <H2>BUTTERFLY Onboarder</H2>
       <HausAnimated />
       <CenterBox>
         <ParLg>How to Participate</ParLg>
@@ -45,10 +45,10 @@ export const Home = () => {
           <StyledRouterLink to="/manifesto">Manifesto</StyledRouterLink> and make sure that you align
           with the values. Read the{" "}
           <Link
-            href={`https://en.wikipedia.org/wiki/Frog`}
+            href={`https://en.wikipedia.org/wiki/Butterfly`}
             style={{ marginBottom: "2rem" }}
           >
-            Frog docs croak
+            Butterfly docs croak
           </Link>{" "}
           and make sure you understand what this is all about.
         </ParMd>

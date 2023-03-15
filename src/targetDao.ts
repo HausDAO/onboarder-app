@@ -17,7 +17,7 @@ export const TARGET_DAO: {
     STAKE_NEXT_START: number;
   };
 } = {
-  "0xf6538c07324f59b3ba685d86393c65dce9676c70": {
+  "0xb3515130d594a83571f37861c0e9d8de1c1ae893": {
     ADDRESS: "0xb3515130d594a83571f37861c0e9d8de1c1ae893",
     SAFE_ADDRESS: "0x5fb1557dae297dc508eea1bb613307dd76531cb9",
     CHAIN_ID: "0x5",
@@ -56,11 +56,11 @@ export const TARGET_DAO: {
 // };
 
 export const MANIFESTO = {
-  title: "The FROG Manifesto",
+  title: "The BUTTERFLY Manifesto",
   sections: [
     {
-      bold: "We envision a future of frogs.",
-      text: "frogs!!",
+      bold: "We envision a future of butterflys.",
+      text: "butterflys!!",
     },
   ],
 };

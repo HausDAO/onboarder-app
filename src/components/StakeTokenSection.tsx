@@ -80,14 +80,14 @@ export const StakeTokenSection = ({
             onCheckedChange={toggleManifestoChecked}
             checked={isManifestoChecked}
             defaultChecked={false}
-            title="I have read the FROG Manifesto"
+            title="I have read the BUTTERFLY Manifesto"
             className="checkbox"
           />
           <Checkbox
             onCheckedChange={toggleDocsChecked}
             checked={isDocsChecked}
             defaultChecked={false}
-            title="I have read the frog Docs"
+            title="I have read the butterfly Docs"
             className="checkbox"
           />
         </CheckArea>

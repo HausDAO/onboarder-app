@@ -214,7 +214,7 @@ export const Join = () => {
   return (
     <SingleColumnLayout>
       <StakeBox>
-        <H2>Join Frog</H2>
+        <H2>Join Butterfly</H2>
         <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
         <ParSm>You can get up to 100 shares all further stake is represented as LOOT</ParSm>
         <DataGrid>

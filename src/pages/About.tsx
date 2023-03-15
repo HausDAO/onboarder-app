@@ -30,25 +30,13 @@ export const About = () => {
           </Link>
         </ParMd>
         <ParMd>
-          <Bold>Latest News</Bold> Get the latest news from the DaoHaus core
+          <Bold>Latest News</Bold> Get the latest news from the core
           team and the community.{" "}
           <Link
             href={ABOUTLINKS.twitter}
             style={{ marginBottom: "2rem" }}
           >
             Twitter
-          </Link>
-        </ParMd>
-        <ParMd>
-          <Bold>Participate in Latest Strategic Signaling</Bold> All members can
-          participate in the the strategic signaling sessions which help shape
-          the future of DAOhaus and retroactively recognize and reward
-          contributions.{" "}
-          <Link
-            href={"https://signal.daohaus.fun/"}
-            style={{ marginBottom: "2rem" }}
-          >
-            Strategic Signaling
           </Link>
         </ParMd>
         <ParMd>
@@ -60,17 +48,17 @@ export const About = () => {
             href={`https://admin.daohaus.fun/#/molochv3/${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID}/${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].ADDRESS}`}
             style={{ marginBottom: "2rem" }}
           >
-            PublicHAUS Admin
+            DAO Admin
           </Link>
         </ParMd>
         <ParMd>
           <Bold>Contribute content and code</Bold> looks at open issues and
-          projects in the DaoHaus repo and start to contribute now.{" "}
+          projects in the repo and start to contribute now.{" "}
           <Link
             href={ABOUTLINKS.github}
             style={{ marginBottom: "2rem" }}
           >
-            HAUSDAO repo
+            Repo
           </Link>
         </ParMd>
         <ParMd>
