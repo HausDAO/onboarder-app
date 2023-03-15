@@ -23,9 +23,6 @@ jobs:
           node-version: 16
           cache: 'npm'
       - run: rm -rf node_modules && yarn install --frozen-lockfile
-      - name: Create empty file test
-        run: |
-          touch test.txt
       - name: Create env file
         run: |
           touch .env
@@ -34,9 +31,12 @@ jobs:
           echo VITE_RIVET_KEY=${{ vars.VITE_RIVET_KEY }}  >> .env
           echo VITE_TARGET_KEY=${{ vars.VITE_TARGET_KEY }}  >> .env
       - run: yarn build
+      - name: cat env
+        run: |
+          cat .env
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
+          ls -a ${{ github.workspace }}
       - uses: web3-storage/add-to-web3@v2
         id: web3
         with:
