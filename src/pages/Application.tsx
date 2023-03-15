@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useUserMember } from '../hooks/useUserMember';
 import { CustomFields } from '../legos/config';
 
-import { FORM } from '../legos/forms';
+import { APP_FORM } from '../legos/forms';
 import { TARGET_DAO } from '../targetDao';
 import styled from 'styled-components';
 import { StyledRouterLink } from '../components/Layout';
@@ -75,7 +75,7 @@ export const Application = () => {
   if (pageState === PageState.Idle) {
     return (
       <FormBuilder
-        form={FORM.VERIFY_DELEGATE}
+        form={APP_FORM.VERIFY_DELEGATE}
         targetNetwork={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID}
         customFields={CustomFields}
         lifeCycleFns={{

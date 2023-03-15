@@ -3,7 +3,7 @@ import { CustomFormLego } from './config';
 import { APP_FIELD } from './fields';
 import { APP_TX } from './tx';
 
-export const FORM: Record<string, CustomFormLego> = {
+export const APP_FORM: Record<string, CustomFormLego> = {
   VERIFY_DELEGATE: {
     id: 'VERIFY_DELEGATE',
     title: 'Verify Champion',
