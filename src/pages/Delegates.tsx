@@ -16,7 +16,7 @@ import { useDHConnect } from '@daohaus/connect';
 import styled from 'styled-components';
 import { DelegateList } from '../components/DelegateList';
 import { MolochV3Dao } from '@daohaus/moloch-v3-data';
-import { MemberProfileAvatar } from '../components/MemberProfileAvatar';
+import { MemberProfileCard } from '@daohaus/moloch-v3-macro-ui';
 
 const DataRow = styled.div`
   display: flex;
@@ -203,11 +203,12 @@ export const Delegates = () => {
           <div className="delegating-to">
             <ParMd>You are delegating to: </ParMd>{' '}
             {user?.delegatingTo ? (
-              <MemberProfileAvatar
-                daochain={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID}
-                daoid={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].ADDRESS}
-                memberAddress={user?.delegatingTo}
-              />
+              // <MemberProfileCard
+              //   daoChain={daoChain}
+              //   daoId={daoId}
+              //   memberAddress={value}
+              // />
+              <ParMd>{user?.delegatingTo}</ParMd>
             ) : (
               <ParMd>--</ParMd>
             )}

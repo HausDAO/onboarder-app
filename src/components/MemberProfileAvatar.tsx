@@ -47,7 +47,7 @@ export const MemberProfileAvatar = ({
 
   return (
     <MemberContainer>
-      <MemberCard
+      {/* <MemberCard
         explorerNetworkId={daochain}
         profileUrl={customProfileURI}
         minWidth="4rem"
@@ -56,7 +56,7 @@ export const MemberProfileAvatar = ({
             address: memberAddress,
           }
         }
-      />
+      /> */}
     </MemberContainer>
   );
 };

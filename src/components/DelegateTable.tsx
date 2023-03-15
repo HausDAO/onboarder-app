@@ -1,4 +1,4 @@
-import { Card, Link, widthQuery } from '@daohaus/ui';
+import { Card, Link, ParMd, widthQuery } from '@daohaus/ui';
 
 import { formatValueTo, fromWei, votingPowerPercentage } from '@daohaus/utils';
 import { useMemo } from 'react';
@@ -9,9 +9,10 @@ import { TARGET_DAO } from '../targetDao';
 
 import { RegisteredMember } from '../utils/types';
 import { DaoTable } from './DaoTable';
-import { MemberProfileAvatar } from './MemberProfileAvatar';
 import { sharesDelegatedToMember } from '../utils/conversion';
 import { StyledRouterLink } from './Layout';
+import { MemberProfileCard } from '@daohaus/moloch-v3-macro-ui';
+import { useCurrentDao, useDaoMember } from '@daohaus/moloch-v3-hooks';
 
 
 const DelegateContainer = styled(Card)`
@@ -49,19 +50,22 @@ export const DelegateTable = ({
   userAddress?: string;
   userDelegateAddress?: string;
 }) => {
+  const { isFetched, isFetching, member } = useDaoMember();
+  const { daoChain, daoId } = useCurrentDao();
   const columns = useMemo<Column<RegisteredMember>[]>(() => {
-    if (!dao) return [];
+    if (!dao || !daoChain || !daoId) return [];
     return [
       {
         Header: 'Champion',
         accessor: 'memberAddress',
         Cell: ({ value }) => {
           return (
-            <MemberProfileAvatar
-              daochain={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID}
-              daoid={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].ADDRESS}
-              memberAddress={value}
-            />
+            // <MemberProfileCard
+            //   daoChain={daoChain}
+            //   daoId={daoId}
+            //   memberAddress={value}
+            // />
+            <ParMd>{value}</ParMd>
           );
         },
       },

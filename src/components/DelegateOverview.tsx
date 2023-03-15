@@ -1,9 +1,10 @@
+import { useCurrentDao, useDaoMember } from '@daohaus/moloch-v3-hooks';
+import { MemberProfileCard } from '@daohaus/moloch-v3-macro-ui';
 import { Card, DataIndicator, ParMd, Theme, widthQuery } from '@daohaus/ui';
 import { useMemo } from 'react';
 import styled from 'styled-components';
 import { TARGET_DAO } from '../targetDao';
 import { RegisteredMembers } from '../utils/types';
-import { MemberProfileAvatar } from './MemberProfileAvatar';
 
 const DataGrid = styled.div`
   display: flex;
@@ -54,6 +55,8 @@ export const DelegateOverview = ({
   userAddress?: string;
   userDelegateAddress?: string;
 }) => {
+  // const { isFetched, isFetching, member } = useDaoMember();
+  // const { daoChain, daoId } = useCurrentDao();
   const userDelegateData = useMemo(() => {
     if (
       !userDelegateAddress ||
@@ -74,11 +77,12 @@ export const DelegateOverview = ({
         <DataIndicatorContainer>
           <DataIndicatorLabelMd>Delegating To</DataIndicatorLabelMd>
           {userDelegateData ? (
-            <MemberProfileAvatar
-              daochain={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID}
-              daoid={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].ADDRESS}
-              memberAddress={userDelegateData}
-            />
+            // <MemberProfileCard
+            //   daoChain={daoChain}
+            //   daoId={daoId}
+            //   memberAddress={userDelegateData}
+            // />
+            <ParMd>{userDelegateData}</ParMd>
           ) : (
             'SELF'
           )}

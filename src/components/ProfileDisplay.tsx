@@ -24,10 +24,11 @@ import {
 } from '@daohaus/utils';
 
 // import { MemberProfileMenu } from './MemberProfileMenu';
-import { MemberProfileAvatar } from './MemberProfileAvatar';
 import { MolochV3Member, MolochV3Dao } from '@daohaus/moloch-v3-data';
 import { useDaoData } from '../hooks/useDaoData';
 import { sharesDelegatedToMember } from '../utils/conversion';
+import { useCurrentDao, useDaoMember } from '@daohaus/moloch-v3-hooks';
+import { MemberProfileCard } from '@daohaus/moloch-v3-macro-ui';
 
 const AvatarLarge = styled(ProfileAvatar)`
   height: 12rem;
@@ -108,7 +109,8 @@ type ProfileProps = {
 
 export const ProfileDisplay = ({ profile, membership, dao }: ProfileProps) => {
   const { daochain } = useParams();
-
+  // const { isFetched, isFetching, member } = useDaoMember();
+  // const { daoChain, daoId } = useCurrentDao();
   return (
     <PContainer>
       <PSubContainer>
@@ -183,11 +185,11 @@ export const ProfileDisplay = ({ profile, membership, dao }: ProfileProps) => {
           {membership.delegatingTo !== membership.memberAddress && (
             <DataIndicatorContainer>
               <DataIndicatorLabelMd>Delegating To</DataIndicatorLabelMd>
-              <MemberProfileAvatar
-                daochain={daochain as keyof Keychain}
-                daoid={dao.id}
-                memberAddress={membership.delegatingTo}
-              />
+            {/* <MemberProfileCard
+              daoChain={daoChain}
+              daoId={daoId}
+              memberAddress={value}
+            /> */}
             </DataIndicatorContainer>
           )}
         </>
