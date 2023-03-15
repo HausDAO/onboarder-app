@@ -23,13 +23,16 @@ jobs:
           node-version: 16
           cache: 'npm'
       - run: rm -rf node_modules && yarn install --frozen-lockfile
+      - name: Create empty file test
+        run: |
+          touch test.txt
       - name: Create env file
         run: |
           touch .env
-          echo VITE_ETHERSCAN_KEY=${{ secrets.VITE_ETHERSCAN_KEY}}  >> .env
-          echo VITE_GRAPH_API_KEY_MAINNET=${{ secrets.VITE_GRAPH_API_KEY_MAINNET }}  >> .env
-          echo VITE_RIVET_KEY=${{ secrets.VITE_RIVET_KEY }}  >> .env
-          echo VITE_TARGET_KEY=${{ secrets.VITE_TARGET_KEY }}  >> .env
+          echo VITE_ETHERSCAN_KEY=${{ vars.VITE_ETHERSCAN_KEY}}  >> .env
+          echo VITE_GRAPH_API_KEY_MAINNET=${{ vars.VITE_GRAPH_API_KEY_MAINNET }}  >> .env
+          echo VITE_RIVET_KEY=${{ vars.VITE_RIVET_KEY }}  >> .env
+          echo VITE_TARGET_KEY=${{ vars.VITE_TARGET_KEY }}  >> .env
       - run: yarn build
       - name: List files in the repository
         run: |
