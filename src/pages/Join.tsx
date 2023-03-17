@@ -191,12 +191,8 @@ export const Join = () => {
         <H2>Join Mantis</H2>
         <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
         <DataGrid>
-          <DataIndicator
-            label="Stake Token:"
-            data={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}
-            size="sm"
-          />
           <DataIndicator label="Stake Ratio:" data={`1:10`} size="sm" />
+          <DataIndicator label="Fee:" data={`.25%`} size="sm" />
 
           {expiry && <ExpiryIndicator expiry={expiry} />}
           {minTribute && <MinTributeIndicator minTribute={minTribute} />}
