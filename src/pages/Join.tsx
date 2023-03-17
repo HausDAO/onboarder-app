@@ -197,12 +197,14 @@ export const Join = () => {
       <StakeBox>
         <H2>Fund Yeet</H2>
         <ParLg>Target Threshold</ParLg>
+        <ParSm>funds above threshold will go to PublicHAUS maintnenace fund eco.daohaus.eth</ParSm>
         <DataGrid>
           <TargetThresholdIndicator target={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].TARGET_THRESHOLD} />
           {dao && <DAOEthIndicator dao={dao} />}
         </DataGrid>
         <Divider className="space" />
         <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
+        <ParSm>Fund the project and keep custody.</ParSm>
         <DataGrid>
           <DataIndicator label="Stake Ratio:" data={`1:10`} size="sm" />
           <DataIndicator label="Fee:" data={`1%`} size="sm" />
