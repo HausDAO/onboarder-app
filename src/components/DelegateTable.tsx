@@ -56,7 +56,7 @@ export const DelegateTable = ({
     if (!dao || !daoChain || !daoId) return [];
     return [
       {
-        Header: 'Champion',
+        Header: 'Core Team',
         accessor: 'memberAddress',
         Cell: ({ value }) => {
           return (

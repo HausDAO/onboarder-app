@@ -195,10 +195,10 @@ export const Delegates = () => {
 
   return (
     <ExpandedLayout>
-      <H2>Hall of Champions</H2>
+      <H2>Core Team</H2>
       <DataRow>
         <div className="p-box">
-          <ParMd>Champions: {Object.keys(registeredDelegates).length}</ParMd>
+          <ParMd>Core: {Object.keys(registeredDelegates).length}</ParMd>
 
           <div className="delegating-to">
             <ParMd>You are delegating to: </ParMd>{' '}

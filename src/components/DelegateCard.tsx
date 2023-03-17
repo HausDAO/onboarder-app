@@ -142,7 +142,7 @@ export const DelegateCard = ({
         size="sm"
         color="secondary"
       >
-        See Champion
+        See Core Team
       </ButtonRouterLink>
     </DelegateCardBox>
   );

@@ -7,7 +7,7 @@ export const ChampionName = (props: Buildable<Field>) => {
   const { watch, setValue } = useFormBuilder();
   const name = watch(id);
   useEffect(() => {
-    const template = `${name} | Championship Request`;
+    const template = `${name} | Core Team Request`;
     setValue('championName', template);
   }, [name]);
 

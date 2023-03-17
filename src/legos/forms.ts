@@ -6,9 +6,9 @@ import { APP_TX } from './tx';
 export const APP_FORM: Record<string, CustomFormLego> = {
   VERIFY_DELEGATE: {
     id: 'VERIFY_DELEGATE',
-    title: 'Verify Champion',
+    title: 'Verify Core Contributor',
     subtitle: 'Verification Proposal',
-    description: 'Verify yourself as a DAO Champion',
+    description: 'Verify yourself as a DAO Core Contributor',
     requiredFields: { name: true, description: true, link: true },
     log: true,
     tx: APP_TX.VERIFY_DELEGATE,
