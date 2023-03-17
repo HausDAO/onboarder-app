@@ -20,7 +20,7 @@ const fetchBalanceData = async ({
 }: {
   userAddress?: string | null;
   chainId: ValidNetwork;
-  provider: Web3Provider | undefined;
+  provider: any | undefined;
   rpcs?: Keychain;
   fetchShape?: FetchShape;
 }) => {
@@ -62,7 +62,7 @@ export const useETH = ({
 }: {
   userAddress?: string | null;
   chainId: ValidNetwork;
-  provider: Web3Provider | undefined;
+  provider: any | undefined;
   rpcs?: Keychain;
   cacheTime?: number;
   staleTime?: number;
