@@ -8,6 +8,7 @@ type FetchShape = {
   baal?: boolean;
   expiry?: boolean;
   token?: boolean;
+  minTribute?: boolean;
 };
 
 const fetchOnboarder = async ({
@@ -18,6 +19,7 @@ const fetchOnboarder = async ({
     baal: true,
     expiry: true,
     token: true,
+    minTribute: true,
   },
 }: {
   shamanAddress: string;
@@ -36,11 +38,13 @@ const fetchOnboarder = async ({
     const baal = fetchShape?.baal ? await shamanContract.baal() : null;
     const expiry = fetchShape?.expiry ? await shamanContract.expiery() : null;
     const token = fetchShape?.token ? await shamanContract.token() : null;
+    const minTribute = fetchShape?.minTribute ? await shamanContract.minTribute() : null;
 
     return {
       baal,
       expiry: expiry.toString() as string,
       token,
+      minTribute,
     };
   } catch (error: any) {
     console.error(error);
@@ -56,6 +60,7 @@ export const useOnboarder = ({
     baal: true,
     expiry: true,
     token: true,
+    minTribute: true
   },
 }: {
   shamanAddress: string;

@@ -7,7 +7,7 @@ export const TARGET_DAO: {
     SAFE_ADDRESS: EthAddress;
     SHARE_ADDRESS: EthAddress;
     LOOT_ADDRESS: EthAddress;
-    STAKE_TOKEN: EthAddress;
+    STAKE_TOKEN: EthAddress | "";
     SHAMAN_ADDRESS: EthAddress;
     CHAIN_ID: ValidNetwork;
     STAKE_TOKEN_NAME: string;
@@ -17,17 +17,17 @@ export const TARGET_DAO: {
     STAKE_NEXT_START: number;
   };
 } = {
-  "0xb3515130d594a83571f37861c0e9d8de1c1ae893": {
-    ADDRESS: "0xb3515130d594a83571f37861c0e9d8de1c1ae893",
+  "0x08d906167355b9dfb957108b2162c7c0e78aaaee": {
+    ADDRESS: "0x08d906167355b9dfb957108b2162c7c0e78aaaee",
     SAFE_ADDRESS: "0x5fb1557dae297dc508eea1bb613307dd76531cb9",
     CHAIN_ID: "0x5",
     SHARE_ADDRESS: "0x9ff01db42ad737b1e907d21d2f1c105423d324ed",
     LOOT_ADDRESS: "0x8a7aacce7b0336c7c4986fc11533200105e73fa2",
-    STAKE_TOKEN: "0xaFF4481D10270F50f203E0763e2597776068CBc5",
-    STAKE_TOKEN_NAME: "WEENUS Token",
-    STAKE_TOKEN_SYMBOL: "WEENUS",
+    STAKE_TOKEN: "",
+    STAKE_TOKEN_NAME: "Ethereum",
+    STAKE_TOKEN_SYMBOL: "ETH",
     STAKE_TOKEN_DECIMALS: 18,
-    SHAMAN_ADDRESS: "0xbeC36d44523DF7E8062E8A5a29C9433e91633Fdd",
+    SHAMAN_ADDRESS: "0x26FFBf2e56B1aAf126e2de9E6966867D934e3ea1",
     STAKE_PAUSED: false,
     STAKE_NEXT_START: 1677513600,
   }
@@ -56,11 +56,11 @@ export const TARGET_DAO: {
 // };
 
 export const MANIFESTO = {
-  title: "The BUTTERFLY Manifesto",
+  title: "The PRAYING MANTIS Manifesto",
   sections: [
     {
-      bold: "We envision a future of butterflys.",
-      text: "butterflys!!",
+      bold: "We envision a future of praying mantises.",
+      text: "praying mantises!!",
     },
   ],
 };

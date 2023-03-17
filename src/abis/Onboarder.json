@@ -30,31 +30,24 @@
       },
       {
         "indexed": false,
+        "internalType": "uint256",
+        "name": "totalFee",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "isShares",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
         "internalType": "address",
         "name": "baal",
         "type": "address"
       }
     ],
     "name": "ObReceived",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "token",
-        "type": "address"
-      }
-    ],
-    "name": "Tribute",
     "type": "event"
   },
   {
@@ -81,13 +74,6 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "cap",
-    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "name": "cuts",
     "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
@@ -104,14 +90,12 @@
   {
     "inputs": [
       { "internalType": "address", "name": "_moloch", "type": "address" },
-      {
-        "internalType": "address payable",
-        "name": "_token",
-        "type": "address"
-      },
       { "internalType": "uint256", "name": "_expiery", "type": "uint256" },
-      { "internalType": "uint256", "name": "_cap", "type": "uint256" },
-      { "internalType": "uint256", "name": "_multiplier", "type": "uint256" }
+      { "internalType": "uint256", "name": "_multiply", "type": "uint256" },
+      { "internalType": "uint256", "name": "_minTribute", "type": "uint256" },
+      { "internalType": "bool", "name": "_isShares", "type": "bool" },
+      { "internalType": "address[]", "name": "_cuts", "type": "address[]" },
+      { "internalType": "uint256[]", "name": "_amounts", "type": "uint256[]" }
     ],
     "name": "init",
     "outputs": [],
@@ -120,27 +104,31 @@
   },
   {
     "inputs": [],
-    "name": "multiplier",
+    "name": "isShares",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "minTribute",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [
-      { "internalType": "uint256", "name": "_value", "type": "uint256" }
-    ],
-    "name": "onboarder",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "inputs": [],
+    "name": "multiply",
+    "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "token",
-    "outputs": [
-      { "internalType": "contract IERC20", "name": "", "type": "address" }
-    ],
-    "stateMutability": "view",
+    "name": "onboarder",
+    "outputs": [],
+    "stateMutability": "payable",
     "type": "function"
-  }
+  },
+  { "stateMutability": "payable", "type": "receive" }
 ]

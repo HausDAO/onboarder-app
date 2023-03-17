@@ -1,5 +1,4 @@
 import { useDHConnect } from '@daohaus/connect';
-import { useERC20 } from '../hooks/useERC20';
 import { TARGET_DAO } from '../targetDao';
 import {
   Banner,
@@ -22,6 +21,8 @@ import { MaxUint256 } from '@ethersproject/constants';
 import { APP_TX } from '../legos/tx';
 import {
   formatDistanceToNowFromSeconds,
+  formatValueTo,
+  fromWei,
   handleErrorMessage,
   toBaseUnits,
   TXLego,
@@ -32,6 +33,8 @@ import { Member } from '../utils/types';
 import { StakeTokenSection } from '../components/StakeTokenSection';
 import { DataGrid } from '../components/DataGrid';
 import { MembershipSection } from '../components/MembershipSection';
+import { StakeEthSection } from '../components/StakeEthSection';
+import { useETH } from '../hooks/useETH';
 
 const StakeBox = styled.div`
   max-width: 70rem;
@@ -75,20 +78,18 @@ const SpinnerBox = styled.div`
   width: 100%;
 `;
 export const Join = () => {
-  const { address } = useDHConnect();
+  const { address, provider } = useDHConnect();
   const { fireTransaction } = useTxBuilder();
   const {
     tokenData,
     isLoading: isTokenLoading,
     isRefetching,
     refetch: refetchToken,
-  } = useERC20({
-    tokenAddress: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN,
+  } = useETH({
     chainId: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID,
     userAddress: address,
-    spenderAddress: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].SHAMAN_ADDRESS,
+    provider: provider,
     fetchShape: {
-      allowance: true,
       balanceOf: true,
     },
   });
@@ -97,6 +98,7 @@ export const Join = () => {
     chainId: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID,
     fetchShape: {
       expiry: true,
+      minTribute: true,
     },
   });
   const {
@@ -108,45 +110,16 @@ export const Join = () => {
     chainId: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID,
     memberAddress: address,
   });
-  const { isApproved, balance } = tokenData || {};
-  const { expiry } = shamanData || {};
+  const { balance } = tokenData || {};
+  const { expiry, minTribute } = shamanData || {};
 
   console.log("user", user);
 
-  const [isOptimisticApproved, setIsOptimisticApproved] = useState<
-    Record<string, boolean>
-  >({});
   const [isLoadingTx, setIsLoadingTx] = useState(false);
   const { successToast, errorToast, defaultToast } = useToast();
-  const userOptimisticApproved = address && isOptimisticApproved?.[address];
+
   const isLoadingAll = isTokenLoading || isUserLoading;
 
-  const handleApprove = () => {
-    if (!address) return;
-    fireTransaction({
-      tx: {
-        ...APP_TX.APPROVE_TOKEN,
-        staticArgs: [TARGET_DAO[import.meta.env.VITE_TARGET_KEY].SHAMAN_ADDRESS, MaxUint256],
-      } as TXLego,
-      lifeCycleFns: {
-        onRequestSign() {
-          setIsLoadingTx(true);
-        },
-        onTxSuccess() {
-          setIsLoadingTx(false);
-          setIsOptimisticApproved({ [address]: true });
-          successToast({ title: 'Success', description: 'Approved' });
-          setIsLoadingTx(false);
-        },
-        onTxError(err) {
-          const errMsg = handleErrorMessage(err as any);
-          console.error(err);
-          errorToast({ title: 'Error', description: errMsg });
-          setIsLoadingTx(false);
-        },
-      },
-    });
-  };
 
   const handleStake = (wholeAmt: string) => {
     if (!wholeAmt) {
@@ -161,7 +134,8 @@ export const Join = () => {
     fireTransaction({
       tx: {
         ...APP_TX.STAKE,
-        staticArgs: [baseAmt],
+        staticArgs: [],
+        overrides: {value: baseAmt},
       } as TXLego,
       lifeCycleFns: {
         onRequestSign() {
@@ -214,9 +188,8 @@ export const Join = () => {
   return (
     <SingleColumnLayout>
       <StakeBox>
-        <H2>Join Butterfly</H2>
+        <H2>Join Mantis</H2>
         <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
-        <ParSm>You can get up to 100 shares all further stake is represented as LOOT</ParSm>
         <DataGrid>
           <DataIndicator
             label="Stake Token:"
@@ -225,13 +198,8 @@ export const Join = () => {
           />
           <DataIndicator label="Stake Ratio:" data={`1:10`} size="sm" />
 
-          <DataIndicator
-            label="Stake Shares Cap:"
-            data={'1000'}
-            size="sm"
-          />
-
           {expiry && <ExpiryIndicator expiry={expiry} />}
+          {minTribute && <MinTributeIndicator minTribute={minTribute} />}
 
         </DataGrid>
         <Divider className="space" />
@@ -243,10 +211,8 @@ export const Join = () => {
               </ParMd>
           </Card>
 
-        ):(<StakeTokenSection
+        ):(<StakeEthSection
           balance={balance}
-          isApproved={isApproved || userOptimisticApproved}
-          handleApprove={handleApprove}
           handleStake={handleStake}
           isLoading={isLoadingTx || isRefetching}
         />)}
@@ -258,4 +224,12 @@ export const Join = () => {
 const ExpiryIndicator = ({ expiry }: { expiry: string }) => {
   const expiryDate = formatDistanceToNowFromSeconds(expiry);
   return <DataIndicator label="Open Staking Expires:" data={expiryDate} size="sm" />;
+};
+
+const MinTributeIndicator = ({ minTribute }: { minTribute: string }) => {
+  const minTributeEth = formatValueTo({
+    value: fromWei(minTribute),
+    format: "numberShort",
+  })
+  return <DataIndicator label="Min Tribute:" data={minTributeEth} size="sm" />;
 };

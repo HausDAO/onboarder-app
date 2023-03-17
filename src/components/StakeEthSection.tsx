@@ -4,17 +4,13 @@ import { useEffect, useState } from 'react';
 import { isNumberish, toBaseUnits } from '@daohaus/utils';
 import styled from 'styled-components';
 
-export const StakeTokenSection = ({
-  isApproved,
-  handleApprove,
+export const StakeEthSection = ({
   isLoading,
   handleStake,
   balance,
 }: {
   isLoading: boolean;
-  isApproved: boolean;
   balance?: string | null;
-  handleApprove: () => void;
   handleStake: (wholeAmt: string) => void;
 }) => {
   const [stkAmt, setStkAmt] = useState<string>('');
@@ -58,7 +54,7 @@ export const StakeTokenSection = ({
       <div className="input-box">
         <Label>
           <>
-            {isApproved ? 'Stake' : 'Approve'} {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}{' '}
+            {'Stake'} {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}{' '}
             to Join
           </>
         </Label>
@@ -68,13 +64,13 @@ export const StakeTokenSection = ({
           number
           //@ts-ignore
           value={stkAmt}
-          disabled={!isApproved || isLoading}
+          disabled={isLoading}
           full
-          placeholder={isApproved ? '0' : 'Approve first'}
+          placeholder={'0'}
         />
         {valMsg && <ParSm className="err">{valMsg}</ParSm>}
       </div>
-      {isApproved && (
+
         <CheckArea>
           <Checkbox
             onCheckedChange={toggleManifestoChecked}
@@ -91,9 +87,9 @@ export const StakeTokenSection = ({
             className="checkbox"
           />
         </CheckArea>
-      )}
 
-      {isApproved ? (
+
+
         <Button
           type="button"
           onClick={handleLocalStake}
@@ -102,17 +98,7 @@ export const StakeTokenSection = ({
         >
           Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}
         </Button>
-      ) : (
-        <Button
-          type="button"
-          onClick={handleApprove}
-          variant="outline"
-          fullWidth
-          disabled={isLoading}
-        >
-          Approve {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}
-        </Button>
-      )}
+      
     </>
   );
 };
