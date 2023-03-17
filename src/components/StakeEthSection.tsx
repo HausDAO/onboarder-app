@@ -76,14 +76,14 @@ export const StakeEthSection = ({
             onCheckedChange={toggleManifestoChecked}
             checked={isManifestoChecked}
             defaultChecked={false}
-            title="I have read the PRAYING MANTIS Manifesto"
+            title="I understand how project based funding works."
             className="checkbox"
           />
           <Checkbox
             onCheckedChange={toggleDocsChecked}
             checked={isDocsChecked}
             defaultChecked={false}
-            title="I have read the praying mantis Docs"
+            title="I have read the project scope and deliverables"
             className="checkbox"
           />
         </CheckArea>

@@ -35,38 +35,38 @@ const StyledRouterLink = styled(RouterLink)`
 export const Home = () => {
   return (
     <SingleColumnLayout>
-      <H2>PRAYING MANTIS Onboarder</H2>
+      <H2>Yeet Project Based Funding</H2>
       <HausAnimated />
       <CenterBox>
         <ParLg>How to Participate</ParLg>
         <H3>Step 1: READ</H3> 
         <ParMd>
-          Read the DAOhaus{" "}
-          <StyledRouterLink to="/manifesto">Manifesto</StyledRouterLink> and make sure that you align
-          with the values. Read the{" "}
+          Read about RageFunding in {" "} 
+          <StyledRouterLink to="/manifesto">How it works</StyledRouterLink>{" "} 
+          and look at the
           <Link
             href={`https://en.wikipedia.org/wiki/Mantis`}
             style={{ marginBottom: "2rem" }}
           >
-            Mantis docs
+            project Spec
           </Link>{" "}
-          and make sure you understand what this is all about.
         </ParMd>
 
-          <H3>Step 2: STAKE</H3> 
+          <H3>Step 2: FUND</H3> 
           <ParMd>
-          Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} for DAO
-          shares. <StyledRouterLink to="/join">here</StyledRouterLink>
+          Become a funder and stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} for DAO
+          loot. <StyledRouterLink to="/join">here</StyledRouterLink>
           </ParMd>
-          <H3>Step 3: DELEGATE</H3>
+          <H3>Step 3: GET RETROED</H3>
         <ParMd>
-          Delegate your shares to a DAO Champion <Bold>OR</Bold> apply to be a
-          Champion yourself. You can read Champion platforms on their profile
-          page. <StyledRouterLink to="/delegates">here</StyledRouterLink>
+          The executing team is <StyledRouterLink to="/delegates">here</StyledRouterLink>.
+          Development and project progress will be transparently tracked in the DAO. 
+          Funders can always rugquit and get their funds back or hangout and get retroed.
+          Project based funds are eligible for PublicHAUS retroactive rewards.
         </ParMd>
         <ParMd>
           * Championship requires a DAO vote to ensure you are a real person,
-          and you are aligned with the DAOhaus mission. If you are ready for
+          and you have the skills to execute on project deliverables. If you are ready for
           this resposibility create a DAO proposal{" "}
           <StyledRouterLink to="/apply">here</StyledRouterLink>.
         </ParMd>

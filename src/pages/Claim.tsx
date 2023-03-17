@@ -18,6 +18,9 @@ export const Claim = () => {
   return (
     <SingleColumnLayout>
       <H2>Claims</H2>
+      <ParMd style={{ marginTop: "5em" }}>
+        This is where you will find your retroactive claim for a successful yeet
+      </ParMd>
 
       <ParMd style={{ marginTop: "5em" }}>
         <strong>Check back soon for more special claim events</strong>

@@ -15,21 +15,23 @@ export const TARGET_DAO: {
     STAKE_TOKEN_DECIMALS: number;
     STAKE_PAUSED: boolean;
     STAKE_NEXT_START: number;
+    TARGET_THRESHOLD: string;
   };
 } = {
-  "0x08d906167355b9dfb957108b2162c7c0e78aaaee": {
-    ADDRESS: "0x08d906167355b9dfb957108b2162c7c0e78aaaee",
-    SAFE_ADDRESS: "0x5fb1557dae297dc508eea1bb613307dd76531cb9",
+  "0x9b164a9422a478dca4faba6976812c4b6370d069": {
+    ADDRESS: "0x9b164a9422a478dca4faba6976812c4b6370d069",
+    SAFE_ADDRESS: "0xaff472fe171dd58c2bb49f1907e3030247c6ef4c",
     CHAIN_ID: "0x5",
-    SHARE_ADDRESS: "0x9ff01db42ad737b1e907d21d2f1c105423d324ed",
-    LOOT_ADDRESS: "0x8a7aacce7b0336c7c4986fc11533200105e73fa2",
+    SHARE_ADDRESS: "0xaff472fe171dd58c2bb49f1907e3030247c6ef4c",
+    LOOT_ADDRESS: "0x5308ec3196fbd4bb5f1c66ec5b992ab059841c4e",
     STAKE_TOKEN: "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6", // weth
     STAKE_TOKEN_NAME: "Ethereum",
     STAKE_TOKEN_SYMBOL: "ETH",
     STAKE_TOKEN_DECIMALS: 18,
-    SHAMAN_ADDRESS: "0x26FFBf2e56B1aAf126e2de9E6966867D934e3ea1",
+    SHAMAN_ADDRESS: "0x131921b66887689D09d5D2FeA6a562c69bc30148",
     STAKE_PAUSED: false,
     STAKE_NEXT_START: 1677513600,
+    TARGET_THRESHOLD: "10000000000000000000",
   }
 };
 
@@ -56,12 +58,33 @@ export const TARGET_DAO: {
 // };
 
 export const MANIFESTO = {
-  title: "The PRAYING MANTIS Manifesto",
+  title: "Why We Yeet",
   sections: [
     {
-      bold: "We envision a future of praying mantises.",
-      text: "praying mantises!!",
+      bold: "We YEET.",
+      text: "For those who recognize the power of community, Yeeter is a funding mechanism capturing enthusiasm and facilitating cooperation. Unlike crowdfunding apps or venture capitalists, we provide tools supporting value aligned individuals to pool resources towards a common goal.",
     },
+    {
+      bold: "Easiest Way to Fund a Project",
+      text: "With customizable parameters, the Yeeter contract allows you to determine the contribution range, start and end times, and maximum capitalization."
+    },
+    {
+      bold: "Minority Protections and Exit Options",
+      text: "By preserving the option to exit, Yeeters' contributions are protected and funds are safu. As members of the DAO, Yeeters can withdraw their portion of the funds at any time by ragequitting. Your organization is decentralized from day 1."
+    },
+    {
+      bold: "Community Driven",
+      text: "Transparent and open-source, Yeeter is an exciting new fundraising primitive built by the DAOhaus community."
+    },
+    {
+      bold: "Funders Rewarded",
+      text: "Through quaterliy retroactive rewards, Yeeters are rewarded for their contributions to the DAO."
+    },
+    {
+      bold: "Sophisticated Smart Contracts to Serve Your Community",
+      text: "With your project on Y33T, contributors send tokens in the form of xDAI or ETH. The Yeeter smart contract forwards those funds into a treasury, creating stake for contributors. The result is a DAO, with a crowdfunded treasury, managed by the project team and supported by contributors.",
+    }
+
   ],
 };
 

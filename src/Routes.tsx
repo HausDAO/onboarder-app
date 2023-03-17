@@ -46,10 +46,10 @@ export const Routes = () => {
         pathname={pathname}
         navLinks={[
           { label: 'Home', href: '/' },
-          { label: 'Manifesto', href: '/manifesto' },
-          { label: 'Stake', href: '/join' },
-          { label: 'Delegate', href: '/delegates' },
-          { label: 'Become a Champion', href: '/apply' },
+          { label: 'About Yeeter', href: '/manifesto' },
+          { label: 'Fund', href: '/join' },
+          { label: 'Core Team', href: '/delegates' },
+          { label: 'Apply for Core', href: '/apply' },
           { label: 'Next', href: '/about' },
         ]}
         leftNav={

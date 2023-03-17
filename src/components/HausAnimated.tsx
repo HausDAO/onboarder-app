@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import hausBlockAnimated from '../assets/hausBlockAnimated.svg';
+import hausBlockAnimated from '../assets/yeet-pirate.e556464d.gif';
 
 const ImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20rem;
+  height: 30rem;
   margin-bottom: 2rem;
   .img-block {
     display: flex;
-    height: 12rem;
-    width: 12rem;
+    height: 28rem;
+    width: 28rem;
   }
   img {
-    height: 12rem;
-    width: 12rem;
+    height: 28rem;
+    width: 28rem;
   }
 `;
 

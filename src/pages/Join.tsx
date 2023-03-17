@@ -35,6 +35,7 @@ import { DataGrid } from '../components/DataGrid';
 import { MembershipSection } from '../components/MembershipSection';
 import { StakeEthSection } from '../components/StakeEthSection';
 import { useETH } from '../hooks/useETH';
+import { useDaoData } from '../hooks/useDaoData';
 
 const StakeBox = styled.div`
   max-width: 70rem;
@@ -80,6 +81,12 @@ const SpinnerBox = styled.div`
 export const Join = () => {
   const { address, provider } = useDHConnect();
   const { fireTransaction } = useTxBuilder();
+  const { dao } = useDaoData({
+    daoid: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].ADDRESS,
+    daochain: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID,
+  });
+  console.log('dao', dao);
+  
   const {
     tokenData,
     isLoading: isTokenLoading,
@@ -188,11 +195,17 @@ export const Join = () => {
   return (
     <SingleColumnLayout>
       <StakeBox>
-        <H2>Join Mantis</H2>
+        <H2>Fund Yeet</H2>
+        <ParLg>Target Threshold</ParLg>
+        <DataGrid>
+          <TargetThresholdIndicator target={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].TARGET_THRESHOLD} />
+          {dao && <DAOEthIndicator dao={dao} />}
+        </DataGrid>
+        <Divider className="space" />
         <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
         <DataGrid>
           <DataIndicator label="Stake Ratio:" data={`1:10`} size="sm" />
-          <DataIndicator label="Fee:" data={`.25%`} size="sm" />
+          <DataIndicator label="Fee:" data={`1%`} size="sm" />
 
           {expiry && <ExpiryIndicator expiry={expiry} />}
           {minTribute && <MinTributeIndicator minTribute={minTribute} />}
@@ -221,6 +234,24 @@ const ExpiryIndicator = ({ expiry }: { expiry: string }) => {
   const expiryDate = formatDistanceToNowFromSeconds(expiry);
   return <DataIndicator label="Open Staking Expires:" data={expiryDate} size="sm" />;
 };
+
+const TargetThresholdIndicator = ({ target }: { target: string }) => {
+  const targetThreshold = formatValueTo({
+    value: fromWei(target),
+    format: "numberShort",
+  })
+  return <DataIndicator label="Target Raise:" data={targetThreshold} size="sm" />;
+};
+
+const DAOEthIndicator = ({dao}:{dao: any}) => {
+  const daoBalance = formatValueTo({
+    value: fromWei(dao.vaults[0].tokenBalances[0].balance),
+    format: "numberShort",
+  })
+  return <DataIndicator label="Current:" data={daoBalance} size="sm" />;
+};
+
+
 
 const MinTributeIndicator = ({ minTribute }: { minTribute: string }) => {
   const minTributeEth = formatValueTo({
