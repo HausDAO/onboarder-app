@@ -67,7 +67,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <DHConnectProvider
           daoChainId={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID}
         >
-          <HausThemeProvider themeOverrides={overRideTheme}>
+          <HausThemeProvider>
             <Routes />
           </HausThemeProvider>
         </DHConnectProvider>
