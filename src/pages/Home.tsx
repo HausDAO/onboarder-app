@@ -40,6 +40,7 @@ export const Home = () => {
       <HausAnimated />
       <CenterBox>
         <ParLg>How to Participate</ParLg>
+        <ParMd>PBY1: Custom Loot Name and Symbols</ParMd>
         <ParSm>Free software isn't free. Take direct action and fund the teams that
            keep the dream alive. Fund the specific projects you want, how much you want, all while having full custody
            of your funds. </ParSm>
@@ -52,7 +53,7 @@ export const Home = () => {
             href={`https://hackmd.io/@Dekan/SJUV9lIl3`}
             style={{ marginBottom: "2rem" }}
           >
-            project Spec
+            Project Spec
           </Link>{" "}
           for the current project to see if you are interested in funding.
         </ParMd>

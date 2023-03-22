@@ -58,7 +58,7 @@ export const TARGET_DAO: {
 // };
 
 export const MANIFESTO = {
-  title: "Brick by Brick we Yeet ",
+  title: "Brick by Brick We Yeet ",
   sections: [
     {
       bold: "Specific Project Funding.",
@@ -93,8 +93,26 @@ export const MANIFESTO = {
 };
 
 export const ABOUTLINKS = {
-  discord: "https://discord.gg/daohaus",
+  discord: "https://discord.com/channels/709210493549674598/1088154256772714676/1088154260220432474",
   twitter: "https://twitter.com/nowdaoit",
   github: "https://github.com/HausDAO/",
-  githubOnboarder: "https://github.com/HausDAO/publichaus",
+  githubOnboarder: "https://github.com/HausDAO/onboarder-app/tree/pby/custom-loot",
 };
+
+export const PROJECT_RESOURCES = {
+  title: "Core Team Postions ",
+  sections: [
+    {
+      bold: "Smart Contract Developer",
+      text: "Filled",
+    },
+    {
+      bold: "Subgraph Developer",
+      text: "Filled",
+    },
+    {
+      bold: "React Developer",
+      text: "Filled",
+    },
+  ]
+  }

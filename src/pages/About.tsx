@@ -16,12 +16,9 @@ export const About = () => {
   return (
     <SingleColumnLayout>
       <ContentBox>
-        <H2>As a member what's next?</H2>
+        <H2>As a funder what's next?</H2>
         <ParMd>
-          <Bold>Join the Discussion</Bold> Join the discussion on the discord
-          forum and chats. Stay up to date with new announcements and
-          participate in weekly events. We are always looking for feedback and
-          ways to improve the DAO. Introduce yourself and begin the journey now.{" "}
+          <Bold>Join the Discussion</Bold> 
           <Link
             href={ABOUTLINKS.discord}
             style={{ marginBottom: "2rem" }}
