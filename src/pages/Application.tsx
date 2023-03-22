@@ -4,6 +4,7 @@ import {
   Bold,
   FormLayout,
   H2,
+  H3,
   Link,
   ParMd,
   SingleColumnLayout,
@@ -91,6 +92,7 @@ export const Application = () => {
         <SingleColumnLayout>
           <ContentBox>
             <H2>{PROJECT_RESOURCES.title}</H2>
+            
             {PROJECT_RESOURCES.sections.map((section) => {
               return (
                 <ParMd key={section.bold}>
@@ -98,6 +100,7 @@ export const Application = () => {
                 </ParMd>
               );
             })}
+            <H3>(no open positions)</H3>
           </ContentBox>
           <Link
             href={`https://hackmd.io/@Dekan/SJUV9lIl3`}

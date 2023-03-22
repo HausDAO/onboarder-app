@@ -31,20 +31,20 @@ export const APP_TX: Record<string, TXLego> = {
       },
     },
     actions: [
-      {
-        contract: CONTRACT.CURRENT_DAO,
-        method: "mintShares",
-        args: [
-          {
-            type: "nestedArray",
-            args: [".memberAddress"],
-          },
-          {
-            type: "nestedArray",
-            args: [{ type: "static", value: "1000000000000000000" }],
-          },
-        ],
-      },
+      // {
+      //   contract: CONTRACT.CURRENT_DAO,
+      //   method: "mintShares",
+      //   args: [
+      //     {
+      //       type: "nestedArray",
+      //       args: [".memberAddress"],
+      //     },
+      //     {
+      //       type: "nestedArray",
+      //       args: [{ type: "static", value: "1000000000000000000" }],
+      //     },
+      //   ],
+      // },
       {
         contract: CONTRACT.POSTER,
         method: "post",
