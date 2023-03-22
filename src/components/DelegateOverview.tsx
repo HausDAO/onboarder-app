@@ -71,7 +71,7 @@ export const DelegateOverview = ({
     <DelegatesOverviewCard>
       <DataGrid>
         <SpacedIndicator
-          label="Champions"
+          label="Core Team"
           data={Object.keys(registeredDelegates).length}
         />
         <DataIndicatorContainer>

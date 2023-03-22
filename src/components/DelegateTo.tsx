@@ -90,7 +90,7 @@ export const DelegateTo = () => {
           variant="outline"
           fullWidth={isMobile}
         >
-          BACK TO CHAMPIONS
+          BACK TO CORE TEAM
         </ButtonRouterLink>
       </ButtonsContainer>
 

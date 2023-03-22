@@ -179,7 +179,7 @@ export const Delegates = () => {
     }, {} as RegisteredMembers);
   }, [members, records]);
 
-  if (isLoadingAny) return <StatusDisplay title="Loading Champions" spinner />;
+  if (isLoadingAny) return <StatusDisplay title="Loading Core Team" spinner />;
   if (isErrorAny)
     return (
       <StatusDisplay

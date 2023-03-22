@@ -126,7 +126,7 @@ export const MembershipSection = ({
                 You are not yet verified by the DAO.
               </ParMd>
               <StyledRouterLink to={`/apply`} className="space">
-                Verify your identity here
+                Verify your identity here (core team only)
               </StyledRouterLink>
             </>
           )}

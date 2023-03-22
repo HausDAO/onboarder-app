@@ -1,5 +1,5 @@
-import { useDHConnect } from '@daohaus/connect';
-import { TARGET_DAO } from '../targetDao';
+import { useDHConnect } from "@daohaus/connect";
+import { TARGET_DAO } from "../targetDao";
 import {
   Banner,
   Card,
@@ -12,13 +12,14 @@ import {
   SingleColumnLayout,
   Spinner,
   Theme,
+  Tooltip,
   useToast,
-} from '@daohaus/ui';
-import { useUserMember } from '../hooks/useUserMember';
-import { useState } from 'react';
-import { useTxBuilder } from '@daohaus/tx-builder';
-import { MaxUint256 } from '@ethersproject/constants';
-import { APP_TX } from '../legos/tx';
+} from "@daohaus/ui";
+import { useUserMember } from "../hooks/useUserMember";
+import { useState } from "react";
+import { useTxBuilder } from "@daohaus/tx-builder";
+import { MaxUint256 } from "@ethersproject/constants";
+import { APP_TX } from "../legos/tx";
 import {
   formatDistanceToNowFromSeconds,
   formatValueTo,
@@ -26,16 +27,16 @@ import {
   handleErrorMessage,
   toBaseUnits,
   TXLego,
-} from '@daohaus/utils';
-import styled from 'styled-components';
-import { useOnboarder } from '../hooks/useOnboarder';
-import { Member } from '../utils/types';
-import { StakeTokenSection } from '../components/StakeTokenSection';
-import { DataGrid } from '../components/DataGrid';
-import { MembershipSection } from '../components/MembershipSection';
-import { StakeEthSection } from '../components/StakeEthSection';
-import { useETH } from '../hooks/useETH';
-import { useDaoData } from '../hooks/useDaoData';
+} from "@daohaus/utils";
+import styled from "styled-components";
+import { useOnboarder } from "../hooks/useOnboarder";
+import { Member } from "../utils/types";
+import { StakeTokenSection } from "../components/StakeTokenSection";
+import { DataGrid } from "../components/DataGrid";
+import { MembershipSection } from "../components/MembershipSection";
+import { StakeEthSection } from "../components/StakeEthSection";
+import { useETH } from "../hooks/useETH";
+import { useDaoData } from "../hooks/useDaoData";
 
 const StakeBox = styled.div`
   max-width: 70rem;
@@ -85,8 +86,8 @@ export const Join = () => {
     daoid: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].ADDRESS,
     daochain: TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID,
   });
-  console.log('dao', dao);
-  
+  console.log("dao", dao);
+
   const {
     tokenData,
     isLoading: isTokenLoading,
@@ -127,10 +128,9 @@ export const Join = () => {
 
   const isLoadingAll = isTokenLoading || isUserLoading;
 
-
   const handleStake = (wholeAmt: string) => {
     if (!wholeAmt) {
-      errorToast({ title: 'Error', description: 'Please enter an amount' });
+      errorToast({ title: "Error", description: "Please enter an amount" });
       return;
     }
     const baseAmt = toBaseUnits(
@@ -142,7 +142,7 @@ export const Join = () => {
       tx: {
         ...APP_TX.STAKE,
         staticArgs: [],
-        overrides: {value: baseAmt},
+        overrides: { value: baseAmt },
       } as TXLego,
       lifeCycleFns: {
         onRequestSign() {
@@ -150,28 +150,30 @@ export const Join = () => {
         },
         onTxSuccess() {
           defaultToast({
-            title: 'Success',
-            description: 'Transaction submitted: Syncing data on Subgraph',
+            title: "Success",
+            description: "Transaction submitted: Syncing data on Subgraph",
           });
           refetchUser();
         },
         onTxError(err) {
           const errMsg = handleErrorMessage(err as any);
-          errorToast({ title: 'Error', description: errMsg });
+          errorToast({ title: "Error", description: errMsg });
           setIsLoadingTx(false);
         },
         onPollSuccess() {
           setIsLoadingTx(false);
           successToast({
-            title: 'Success',
-            description: `Staked ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} for DAO Shares`,
+            title: "Success",
+            description: `Staked ${
+              TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL
+            } for DAO Shares`,
           });
           refetchUser();
           refetchToken();
         },
         onPollError(err) {
           const errMsg = handleErrorMessage(err as any);
-          errorToast({ title: 'Error', description: errMsg });
+          errorToast({ title: "Error", description: errMsg });
           setIsLoadingTx(false);
         },
       },
@@ -184,7 +186,7 @@ export const Join = () => {
         <StakeBox>
           <H2>Loading</H2>
           <ParMd className="space">
-            Fetching Data from RPC. Load times may be longer than usual.{' '}
+            Fetching Data from RPC. Load times may be longer than usual.{" "}
           </ParMd>
           <SpinnerBox>
             <Spinner size="12rem" />
@@ -196,37 +198,46 @@ export const Join = () => {
     <SingleColumnLayout>
       <StakeBox>
         <H2>Fund Yeet</H2>
-        <ParLg>Target Threshold</ParLg>
-        <ParSm>funds above threshold will go to PublicHAUS maintnenace fund eco.daohaus.eth</ParSm>
+        <ParLg>
+          Target Threshold
+          <Tooltip content="Funds above threshold will go to PublicHAUS maintnenace fund eco.daohaus.eth" />
+        </ParLg>
         <DataGrid>
-          <TargetThresholdIndicator target={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].TARGET_THRESHOLD} />
+          <TargetThresholdIndicator
+            target={
+              TARGET_DAO[import.meta.env.VITE_TARGET_KEY].TARGET_THRESHOLD
+            }
+          />
           {dao && <DAOEthIndicator dao={dao} />}
         </DataGrid>
         <Divider className="space" />
-        <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
+        <ParLg>
+          Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}{" "}
+          to Join
+          <Tooltip content="1% commitment fee goes to PublicHAUS maintnenace fund eco.daohaus.eth" />
+        </ParLg>
         <ParSm>Fund the project and keep custody.</ParSm>
+
         <DataGrid>
           <DataIndicator label="Stake Ratio:" data={`1:10`} size="sm" />
-          <DataIndicator label="Fee:" data={`1%`} size="sm" />
 
+          <DataIndicator label="Fee:" data={`1%`} size="sm" />
           {expiry && <ExpiryIndicator expiry={expiry} />}
           {minTribute && <MinTributeIndicator minTribute={minTribute} />}
-
         </DataGrid>
         <Divider className="space" />
         <MembershipSection user={user as Member | null} balance={balance} />
         {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_PAUSED ? (
           <Card className="space">
-              <ParMd>
-                Staking is currently paused. Please check back later.
-              </ParMd>
+            <ParMd>Staking is currently paused. Please check back later.</ParMd>
           </Card>
-
-        ):(<StakeEthSection
-          balance={balance}
-          handleStake={handleStake}
-          isLoading={isLoadingTx || isRefetching}
-        />)}
+        ) : (
+          <StakeEthSection
+            balance={balance}
+            handleStake={handleStake}
+            isLoading={isLoadingTx || isRefetching}
+          />
+        )}
       </StakeBox>
     </SingleColumnLayout>
   );
@@ -234,31 +245,33 @@ export const Join = () => {
 
 const ExpiryIndicator = ({ expiry }: { expiry: string }) => {
   const expiryDate = formatDistanceToNowFromSeconds(expiry);
-  return <DataIndicator label="Open Staking Expires:" data={expiryDate} size="sm" />;
+  return (
+    <DataIndicator label="Open Staking Expires:" data={expiryDate} size="sm" />
+  );
 };
 
 const TargetThresholdIndicator = ({ target }: { target: string }) => {
   const targetThreshold = formatValueTo({
     value: fromWei(target),
     format: "numberShort",
-  })
-  return <DataIndicator label="Target Raise:" data={targetThreshold} size="sm" />;
+  });
+  return (
+    <DataIndicator label="Target Raise:" data={targetThreshold} size="sm" />
+  );
 };
 
-const DAOEthIndicator = ({dao}:{dao: any}) => {
+const DAOEthIndicator = ({ dao }: { dao: any }) => {
   const daoBalance = formatValueTo({
     value: fromWei(dao.vaults[0].tokenBalances[0].balance),
     format: "numberShort",
-  })
+  });
   return <DataIndicator label="Current:" data={daoBalance} size="sm" />;
 };
-
-
 
 const MinTributeIndicator = ({ minTribute }: { minTribute: string }) => {
   const minTributeEth = formatValueTo({
     value: fromWei(minTribute),
     format: "numberShort",
-  })
+  });
   return <DataIndicator label="Min Tribute:" data={minTributeEth} size="sm" />;
 };

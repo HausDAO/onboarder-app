@@ -7,6 +7,7 @@ import {
   H3,
   Link,
   ParMd,
+  ParSm,
   SingleColumnLayout,
   Spinner,
 } from "@daohaus/ui";
@@ -100,7 +101,7 @@ export const Application = () => {
                 </ParMd>
               );
             })}
-            <H3>(no open positions)</H3>
+            <ParSm>(no open positions)</ParSm>
           </ContentBox>
           <Link
             href={`https://hackmd.io/@Dekan/SJUV9lIl3`}
