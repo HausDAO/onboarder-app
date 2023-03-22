@@ -18,20 +18,20 @@ export const TARGET_DAO: {
     TARGET_THRESHOLD: string;
   };
 } = {
-  "0x9b164a9422a478dca4faba6976812c4b6370d069": {
-    ADDRESS: "0x9b164a9422a478dca4faba6976812c4b6370d069",
-    SAFE_ADDRESS: "0xaff472fe171dd58c2bb49f1907e3030247c6ef4c",
-    CHAIN_ID: "0x5",
-    SHARE_ADDRESS: "0xaff472fe171dd58c2bb49f1907e3030247c6ef4c",
-    LOOT_ADDRESS: "0x5308ec3196fbd4bb5f1c66ec5b992ab059841c4e",
-    STAKE_TOKEN: "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6", // weth
+  "0xd272e6daf68f960c17a8b795dc000d67555ee9c5": {
+    ADDRESS: "0xd272e6daf68f960c17a8b795dc000d67555ee9c5",
+    SAFE_ADDRESS: "0x5f0c027207ed53e226002ca85f73acea34001795",
+    CHAIN_ID: "0x1",
+    SHARE_ADDRESS: "0x1c301edfa0578f8e982025d102d71f082bc68de6",
+    LOOT_ADDRESS: "0xe429825d58c9be568a47016ff15f30522e63c025",
+    STAKE_TOKEN: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", // weth
     STAKE_TOKEN_NAME: "Ethereum",
     STAKE_TOKEN_SYMBOL: "ETH",
     STAKE_TOKEN_DECIMALS: 18,
-    SHAMAN_ADDRESS: "0x131921b66887689D09d5D2FeA6a562c69bc30148",
+    SHAMAN_ADDRESS: "0x2cc4d34344f87f1b3feca2bc160cb54c35db25b1",
     STAKE_PAUSED: false,
     STAKE_NEXT_START: 1677513600,
-    TARGET_THRESHOLD: "10000000000000000000",
+    TARGET_THRESHOLD: "1500000000000000000",
   }
 };
 
@@ -58,8 +58,12 @@ export const TARGET_DAO: {
 // };
 
 export const MANIFESTO = {
-  title: "Why We Yeet",
+  title: "Brick by Brick we Yeet ",
   sections: [
+    {
+      bold: "Specific Project Funding.",
+      text: "Fund only the specific bounty/grant you want to see. No more, no less. Keep full custody of funds and get protocol rewards for success.",
+    },
     {
       bold: "We YEET.",
       text: "For those who recognize the power of community, Yeeter is a funding mechanism capturing enthusiasm and facilitating cooperation. Unlike crowdfunding apps or venture capitalists, we provide tools supporting value aligned individuals to pool resources towards a common goal.",

@@ -41,7 +41,7 @@ export const Home = () => {
       <CenterBox>
         <ParLg>How to Participate</ParLg>
         <ParSm>Free software isn't free. Take direct action and fund the teams that
-           keep the dream alive. Fund the projects you want how much you want all while having full custody
+           keep the dream alive. Fund the specific projects you want, how much you want, all while having full custody
            of your funds. </ParSm>
         <H3>Step 1: READ</H3> 
         <ParMd>
@@ -49,7 +49,7 @@ export const Home = () => {
           <StyledRouterLink to="/manifesto">About Yeeter</StyledRouterLink>{" "} 
           and look at the
           <Link
-            href={`https://en.wikipedia.org/wiki/Mantis`}
+            href={`https://hackmd.io/@Dekan/SJUV9lIl3`}
             style={{ marginBottom: "2rem" }}
           >
             project Spec
