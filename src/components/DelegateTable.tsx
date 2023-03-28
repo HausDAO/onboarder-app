@@ -56,7 +56,7 @@ export const DelegateTable = ({
     if (!dao || !daoChain || !daoId) return [];
     return [
       {
-        Header: 'Champion',
+        Header: `${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`,
         accessor: 'memberAddress',
         Cell: ({ value }) => {
           return (

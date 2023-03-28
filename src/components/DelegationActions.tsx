@@ -8,6 +8,7 @@ import { TXLego } from '@daohaus/utils';
 
 import { APP_TX } from '../legos/tx';
 import { ButtonRouterLink } from './ButtonRouterLink';
+import { TARGET_DAO } from '../targetDao';
 
 const DelegationBox = styled.div`
   margin-top: 2rem;
@@ -100,7 +101,7 @@ export const DelegationActions = ({
       <DelegationBox>
         <ParMd className="spacer">You are not delegating shares</ParMd>
         <ButtonRouterLink to="/delegates" color="secondary" fullWidth>
-          Choose a Champion
+          Choose a ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}
         </ButtonRouterLink>
       </DelegationBox>
     );

@@ -48,8 +48,8 @@ export const Routes = () => {
           { label: 'Home', href: '/' },
           { label: 'Manifesto', href: '/manifesto' },
           { label: 'Stake', href: '/join' },
-          { label: 'Delegate', href: '/delegates' },
-          { label: 'Become a Champion', href: '/apply' },
+          { label: `${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`, href: '/delegates' },
+          { label: `Become a ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`, href: '/apply' },
           { label: 'Next', href: '/about' },
         ]}
         leftNav={

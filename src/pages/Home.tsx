@@ -5,6 +5,7 @@ import {
   Link,
   ParLg,
   ParMd,
+  ParSm,
   SingleColumnLayout,
 } from "@daohaus/ui";
 import { Link as RouterLink } from "react-router-dom";
@@ -26,7 +27,7 @@ const CenterBox = styled.div`
 
 const StyledRouterLink = styled(RouterLink)`
   text-decoration: none;
-  color: hsl(43,100%,64.0%);
+  color: hsl(43, 100%, 64%);
   :hover {
     text-decoration: none;
   }
@@ -35,40 +36,63 @@ const StyledRouterLink = styled(RouterLink)`
 export const Home = () => {
   return (
     <SingleColumnLayout>
-      <H2>PRAYING MANTIS Onboarder</H2>
+      <H2>What is LunarDAO</H2>
       <HausAnimated />
       <CenterBox>
+        <ParSm>
+          LunarDAO is an investment fund based on lunarpunk philosophy. By
+          allocating funds in privacy projects & anonymity tooling we aim to
+          expand freedom and ensure sovereignty. Squad wealth leverages
+          collective strength and captures value in the ecosystem by building a
+          portfolio of privacy assets.{" "}
+        </ParSm>
+        <ParSm>
+          Any member can exit at any time. Members are anonymous hence can
+          participate in building this vision without fear of frozen funds,
+          legal implications or any kind of repression. See
+          <Link href="https://wiki.lunardao.net/anonymizing_assets.html">
+            Anonymizing assets
+          </Link>{" "}
+          for more information on how to stay anonymous while participating in
+          the DAO. We aim to move to a full anon setup and develop
+          infrastructure for a parallel economy outside of control and
+          centralization.
+        </ParSm>
+        <ParSm>
+          LunarDAO supports research on privacy technologies (listed in the
+          <Link href="https://wiki.lunardao.net">wiki</Link>) and education
+          structures such as{" "}
+          <Link href="https://adalanacademy.org">Adalan Academy</Link>. This is
+          where people can master skills in programming and economics while
+          developing a philosophical frame to generate the future path of
+          lunarpunk ecosystem.
+        </ParSm>
+      </CenterBox>
+      <CenterBox>
         <ParLg>How to Participate</ParLg>
-        <H3>Step 1: READ</H3> 
+        <H3>Step 1: READ</H3>
         <ParMd>
-          Read the DAOhaus{" "}
-          <StyledRouterLink to="/manifesto">Manifesto</StyledRouterLink> and make sure that you align
-          with the values. Read the{" "}
+          Read the {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME}{" "}
+          <StyledRouterLink to="/manifesto">Manifesto</StyledRouterLink> and
+          make sure that you align with the values. Read the{" "}
           <Link
-            href={`https://en.wikipedia.org/wiki/Mantis`}
+            href={`https://github.com/lunardao/dao`}
             style={{ marginBottom: "2rem" }}
           >
-            Mantis docs
+            Whitepaper
           </Link>{" "}
-          and make sure you understand what this is all about.
+          for more information on Governance and Tokenomics.
         </ParMd>
 
-          <H3>Step 2: STAKE</H3> 
-          <ParMd>
-          Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} for DAO
-          shares. <StyledRouterLink to="/join">here</StyledRouterLink>
-          </ParMd>
-          <H3>Step 3: DELEGATE</H3>
+        <H3>Step 2: STAKE</H3>
         <ParMd>
-          Delegate your shares to a DAO Champion <Bold>OR</Bold> apply to be a
-          Champion yourself. You can read Champion platforms on their profile
-          page. <StyledRouterLink to="/delegates">here</StyledRouterLink>
+          Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}{" "}
+          for DAO shares. <StyledRouterLink to="/join">here</StyledRouterLink>
         </ParMd>
+        <H3>Step 3: Vote On Proposal</H3>
         <ParMd>
-          * Championship requires a DAO vote to ensure you are a real person,
-          and you are aligned with the DAOhaus mission. If you are ready for
-          this resposibility create a DAO proposal{" "}
-          <StyledRouterLink to="/apply">here</StyledRouterLink>.
+          All proposals can be found [here](insert link). Participate in voting
+          to direct the DAO investments and contribute to DAO development.
         </ParMd>
       </CenterBox>
     </SingleColumnLayout>

@@ -195,10 +195,10 @@ export const Delegates = () => {
 
   return (
     <ExpandedLayout>
-      <H2>Hall of Champions</H2>
+      <H2>Hall of ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}s</H2>
       <DataRow>
         <div className="p-box">
-          <ParMd>Champions: {Object.keys(registeredDelegates).length}</ParMd>
+          <ParMd>${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}s: {Object.keys(registeredDelegates).length}</ParMd>
 
           <div className="delegating-to">
             <ParMd>You are delegating to: </ParMd>{' '}

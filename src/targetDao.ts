@@ -15,14 +15,16 @@ export const TARGET_DAO: {
     STAKE_TOKEN_DECIMALS: number;
     STAKE_PAUSED: boolean;
     STAKE_NEXT_START: number;
+    NAME: string;
+    DELEGATAE_NAME: string;
   };
 } = {
-  "0x08d906167355b9dfb957108b2162c7c0e78aaaee": {
-    ADDRESS: "0x08d906167355b9dfb957108b2162c7c0e78aaaee",
-    SAFE_ADDRESS: "0x5fb1557dae297dc508eea1bb613307dd76531cb9",
+  "0xde3641de5c45ed90a453439156837dd66c3c6f75": {
+    ADDRESS: "0xde3641de5c45ed90a453439156837dd66c3c6f75",
+    SAFE_ADDRESS: "0x2cee94f5b1279d2c304dc32f1d28d921c0cd5fca",
     CHAIN_ID: "0x5",
-    SHARE_ADDRESS: "0x9ff01db42ad737b1e907d21d2f1c105423d324ed",
-    LOOT_ADDRESS: "0x8a7aacce7b0336c7c4986fc11533200105e73fa2",
+    SHARE_ADDRESS: "0x92a51075649365a191c5d1853b96d407f066dcec",
+    LOOT_ADDRESS: "0x1bf69262c3702266cfc08ad1dd6a0726b16930c3",
     STAKE_TOKEN: "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6", // weth
     STAKE_TOKEN_NAME: "Ethereum",
     STAKE_TOKEN_SYMBOL: "ETH",
@@ -30,6 +32,8 @@ export const TARGET_DAO: {
     SHAMAN_ADDRESS: "0x26FFBf2e56B1aAf126e2de9E6966867D934e3ea1",
     STAKE_PAUSED: false,
     STAKE_NEXT_START: 1677513600,
+    NAME: "Lunar Dao",
+    DELEGATAE_NAME: "Sentinel",
   }
 };
 
@@ -56,11 +60,11 @@ export const TARGET_DAO: {
 // };
 
 export const MANIFESTO = {
-  title: "The PRAYING MANTIS Manifesto",
+  title: "The LunarDAO Manifesto",
   sections: [
     {
       bold: "We envision a future of praying mantises.",
-      text: "praying mantises!!",
+      text: "https://wiki.lunardao.net/manifesto.html",
     },
   ],
 };

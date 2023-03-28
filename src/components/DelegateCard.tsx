@@ -23,6 +23,7 @@ import { sharesDelegatedToMember } from '../utils/conversion';
 import styled from 'styled-components';
 import { RegisteredMember } from '../utils/types';
 import { ButtonRouterLink } from './ButtonRouterLink';
+import { TARGET_DAO } from '../targetDao';
 
 const DelegateCardBox = styled(Card)`
   width: 100%;
@@ -142,7 +143,7 @@ export const DelegateCard = ({
         size="sm"
         color="secondary"
       >
-        See Champion
+        See ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}
       </ButtonRouterLink>
     </DelegateCardBox>
   );

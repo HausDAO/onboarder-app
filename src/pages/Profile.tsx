@@ -118,7 +118,7 @@ export const Profile = () => {
               variant="outline"
               fullWidth={isMobile}
             >
-              CHAMPIONS
+              ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}S
             </ButtonRouterLink>
             <Button
               IconLeft={BsShareFill}
