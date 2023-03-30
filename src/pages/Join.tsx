@@ -202,10 +202,6 @@ export const Join = () => {
             <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
           </>
         )}
-        <ParLg>
-          Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}{" "}
-          to Join
-        </ParLg>
         <DataGrid>
           <DataIndicator label="Stake Ratio:" data={`1:100`} size="sm" />
           <DataIndicator label="Fee:" data={`.25%`} size="sm" />
