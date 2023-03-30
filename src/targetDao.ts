@@ -33,7 +33,7 @@ export const TARGET_DAO: {
     STAKE_PAUSED: true,
     STAKE_NEXT_START: 1680198561,
     NAME: "Lunar Dao",
-    DELEGATAE_NAME: "Sentinel",
+    DELEGATAE_NAME: "Steward",
   }
 };
 
