@@ -191,15 +191,15 @@ export const Join = () => {
       <StakeBox>
         {user && parseInt(user.shares) > 0 ? (
           <>
-            <H2>Stake {`${TARGET_DAO.STAKE_TOKEN_SYMBOL}`}</H2>
+            <H2>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}</H2>
             <ParLg>
-              Stake {`${TARGET_DAO.STAKE_TOKEN_SYMBOL}`} for more DAO shares
+              Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} for more DAO shares
             </ParLg>
           </>
         ) : (
           <>
-            <H2>Join Public Haus</H2>
-            <ParLg>Stake {`${TARGET_DAO.STAKE_TOKEN_SYMBOL}`} to Join</ParLg>
+            <H2>Join {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME}</H2>
+            <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
           </>
         )}
         <ParLg>
