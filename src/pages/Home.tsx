@@ -10,7 +10,7 @@ import {
 } from "@daohaus/ui";
 import { Link as RouterLink } from "react-router-dom";
 import styled from "styled-components";
-import { HausAnimated } from "../components/HausAnimated";
+import { LogoContainer } from "../components/LogoContainer";
 import { TARGET_DAO } from "../targetDao";
 
 const CenterBox = styled.div`
@@ -37,7 +37,7 @@ export const Home = () => {
   return (
     <SingleColumnLayout>
       <H2>What is LunarDAO</H2>
-      <HausAnimated />
+      <LogoContainer />
       <CenterBox>
         <ParSm>
           LunarDAO is an investment fund based on lunarpunk philosophy. By

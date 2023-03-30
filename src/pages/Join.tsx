@@ -191,7 +191,7 @@ export const Join = () => {
         <H2>Join {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME}</H2>
         <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
         <DataGrid>
-          <DataIndicator label="Stake Ratio:" data={`1:10`} size="sm" />
+          <DataIndicator label="Stake Ratio:" data={`1:100`} size="sm" />
           <DataIndicator label="Fee:" data={`.25%`} size="sm" />
 
           {expiry && <ExpiryIndicator expiry={expiry} />}

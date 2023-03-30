@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import hausBlockAnimated from '../assets/hausBlockAnimated.svg';
+import logo from '../assets/XAGjy9JK_400x400.jpg';
 
 const ImageContainer = styled.div`
   display: flex;
@@ -19,11 +19,11 @@ const ImageContainer = styled.div`
   }
 `;
 
-export const HausAnimated = () => {
+export const LogoContainer = () => {
   return (
     <ImageContainer>
       <div className="img-block">
-        <img src={hausBlockAnimated} />
+        <img src={logo} />
       </div>
     </ImageContainer>
   );

@@ -55,7 +55,6 @@ export const StakeEthSection = ({
         <Label>
           <>
             {'Stake'} {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}{' '}
-            to Join
           </>
         </Label>
         <Input

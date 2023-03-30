@@ -9,7 +9,7 @@ import {
   SingleColumnLayout,
 } from "@daohaus/ui";
 import styled from "styled-components";
-import { HausAnimated } from "../components/HausAnimated";
+import { HausAnimated } from "../components/LogoContainer";
 import { TARGET_DAO } from "../targetDao";
 
 const CenterBox = styled.div`
