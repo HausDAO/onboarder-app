@@ -206,7 +206,7 @@ export const Join = () => {
         <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
         <ParSm>Fund the project and keep custody.</ParSm>
         <DataGrid>
-          <DataIndicator label="Stake Ratio:" data={`1:10`} size="sm" />
+          <DataIndicator label="Stake Ratio:" data={`1:100`} size="sm" />
           <DataIndicator label="Fee:" data={`1%`} size="sm" />
 
           {expiry && <ExpiryIndicator expiry={expiry} />}
@@ -242,7 +242,7 @@ const TargetThresholdIndicator = ({ target }: { target: string }) => {
     value: fromWei(target),
     format: "numberShort",
   })
-  return <DataIndicator label="Target Raise:" data={targetThreshold} size="sm" />;
+  return <DataIndicator label="Target Raise:" data={`${targetThreshold} ETH`} size="sm" />;
 };
 
 const DAOEthIndicator = ({dao}:{dao: any}) => {

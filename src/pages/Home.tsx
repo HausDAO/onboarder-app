@@ -39,6 +39,9 @@ export const Home = () => {
       <H2>Yeet Project Based Funding</H2>
       <HausAnimated />
       <CenterBox>
+        <ParLg>Onboarder Development and Consulting</ParLg>
+      </CenterBox>
+      <CenterBox>
         <ParLg>How to Participate</ParLg>
         <ParSm>Free software isn't free. Take direct action and fund the teams that
            keep the dream alive. Fund the projects you want how much you want all while having full custody
