@@ -31,7 +31,7 @@ export const TARGET_DAO: {
     STAKE_TOKEN_DECIMALS: 18,
     SHAMAN_ADDRESS: "0x3824893fc10025d4d0e08b80787829dad9142b8c",
     STAKE_PAUSED: true,
-    STAKE_NEXT_START: 1680198561,
+    STAKE_NEXT_START: 1681646400,
     NAME: "Lunar Dao",
     DELEGATAE_NAME: "Steward",
   }
@@ -63,7 +63,7 @@ export const MANIFESTO = {
   title: "The LunarDAO Manifesto",
   sections: [
     {
-      bold: "We envision a future of praying mantises.",
+      bold: "We envision a future.",
       text: "https://wiki.lunardao.net/manifesto.html",
     },
   ],

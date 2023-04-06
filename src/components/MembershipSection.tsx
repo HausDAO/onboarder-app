@@ -114,7 +114,7 @@ export const MembershipSection = ({
           {latestRecord ? (
             <>
               <ParMd className="small-space">
-                The DAO has verified your identity
+                The DAO are verified 
               </ParMd>
               <StyledRouterLink to={`/profile/${address}`} className="space">
                 View your profile here
@@ -123,10 +123,10 @@ export const MembershipSection = ({
           ) : (
             <>
               <ParMd className="small-space">
-                You are not yet verified by the DAO.
+                You are not yet verified to be a {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}. (optional)
               </ParMd>
               <StyledRouterLink to={`/apply`} className="space">
-                Verify your identity here
+                Verify here
               </StyledRouterLink>
             </>
           )}

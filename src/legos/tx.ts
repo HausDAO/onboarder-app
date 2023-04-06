@@ -15,7 +15,7 @@ export enum ProposalTypeIds {
   WalletConnect = 'WALLETCONNECT',
 }
 
-export const DELEGATE_TABLE_REF = 'praying mantisDelegate';
+export const DELEGATE_TABLE_REF = 'Delegate';
 
 export const APP_TX: Record<string, TXLego> = {
   VERIFY_DELEGATE: buildMultiCallTX({
@@ -53,7 +53,7 @@ export const APP_TX: Record<string, TXLego> = {
               description: {
                 type: 'static',
                 value:
-                  'Verified Delegate of Mantis. The DAO has verified that this member is a registered delegate of praying mantis.',
+                  'Verified Delegate. The DAO has verified that this member is a registered delegate.',
               },
               longDescription: `.formValues.description`,
               link: `.formValues.link`,
