@@ -23,7 +23,7 @@ export const About = () => {
           participate in weekly events. We are always looking for feedback and
           ways to improve the DAO. Introduce yourself and begin the journey now.{" "}
           <Link
-            href={ABOUTLINKS.discord}
+            href={ABOUTLINKS.discussion}
             style={{ marginBottom: "2rem" }}
           >
             Discord
@@ -62,21 +62,13 @@ export const About = () => {
           </Link>
         </ParMd>
         <ParMd>
-          <Bold>About this onboarder app</Bold> This onboarder app is opensource
-          and can be found on github. As with everything we do we appreciate
-          stars, contributions and forks.{" "}
+          <Bold>❤️ Donate ❤️</Bold> Make a donation to DAOhaus so these things can stay free and opensource.{" "}
           <Link
-            href={ABOUTLINKS.githubOnboarder}
+            href={ABOUTLINKS.donationLink}
             style={{ marginBottom: "2rem" }}
           >
             DaoHaus Onboarder
           </Link>
-        </ParMd>
-        <ParMd>
-          <Bold>Get help</Bold> Do you want to DAO up your own community? Get
-          advise, help, connections and services from our growing nation of DAOs and
-          governerds. We are here for each other and are the most valuable asset
-          we have.{" "}
         </ParMd>
       </ContentBox>
     </SingleColumnLayout>
