@@ -242,7 +242,7 @@ const TargetThresholdIndicator = ({ target }: { target: string }) => {
     value: fromWei(target),
     format: "numberShort",
   })
-  return <DataIndicator label="Target Raise:" data={`${targetThreshold} ETH`} size="sm" />;
+  return <DataIndicator label="Target Raise:" data={`${targetThreshold} xDAI`} size="sm" />;
 };
 
 const DAOEthIndicator = ({dao}:{dao: any}) => {

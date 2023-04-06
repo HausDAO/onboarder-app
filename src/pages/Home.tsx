@@ -39,7 +39,7 @@ export const Home = () => {
       <H2>Yeet Project Based Funding</H2>
       <HausAnimated />
       <CenterBox>
-        <ParLg>Onboarder Development and Consulting</ParLg>
+        <ParLg>Cookie Jar App</ParLg>
       </CenterBox>
       <CenterBox>
         <ParLg>How to Participate</ParLg>
