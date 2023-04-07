@@ -10,11 +10,10 @@ import { Paging, Ordering } from '@daohaus/data-fetch-utils';
 import { Member, MemberWithProfile } from '../utils/types';
 import { handleErrorMessage } from '@daohaus/utils';
 import { fetchProfile } from '../utils/cacheProfile';
-
-const defaultGraphKeys = { const defaultGraphKeys = { 
+const defaultGraphKeys = { 
   '0x1': import.meta.env.VITE_GRAPH_API_KEY_MAINNET, 
   '0x64': import.meta.env.VITE_GRAPH_API_KEY_MAINNET 
-};};
+};
 
 const fetchMembers = async ({
   chainId,
