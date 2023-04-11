@@ -17,50 +17,12 @@ export const About = () => {
     <SingleColumnLayout>
       <ContentBox>
         <H2>As a member what's next?</H2>
-        <ParMd>
-          <Bold>Join the Discussion</Bold> Join the discussion on the discord
-          forum and chats. Stay up to date with new announcements and
-          participate in weekly events. We are always looking for feedback and
-          ways to improve the DAO. Introduce yourself and begin the journey now.{" "}
-          <Link
-            href={ABOUTLINKS.discussion}
-            style={{ marginBottom: "2rem" }}
-          >
-            Discord
-          </Link>
-        </ParMd>
-        <ParMd>
-          <Bold>Latest News</Bold> Get the latest news from the core
-          team and the community.{" "}
-          <Link
-            href={ABOUTLINKS.twitter}
-            style={{ marginBottom: "2rem" }}
-          >
-            Twitter
-          </Link>
-        </ParMd>
-        <ParMd>
-          <Bold>Review the DAO</Bold> The DAO admin app will have the full
-          onchain history of the DAO available for review. This will include all
-          transactions, proposals, members and votes. Make new proposals and
-          delegates can vote on open proposals.{" "}
-          <Link
-            href={`https://admin.daohaus.fun/#/molochv3/${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID}/${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].ADDRESS}`}
-            style={{ marginBottom: "2rem" }}
-          >
-            DAO Admin
-          </Link>
-        </ParMd>
-        <ParMd>
-          <Bold>Contribute content and code</Bold> looks at open issues and
-          projects in the repo and start to contribute now.{" "}
-          <Link
-            href={ABOUTLINKS.github}
-            style={{ marginBottom: "2rem" }}
-          >
-            Repo
-          </Link>
-        </ParMd>
+          <p><strong>Community:</strong> Join the discussion on the <a href="https://forum.lunardao.net">forum</a>, <a href="https://wiki.lunardao.net/ircd.html">ircd</a> and <a href="https://t.me/LunarDAO_Official">Telegram</a>. Community meetings take place on ircd on Monday 17UTC, channel <code>#lunardao</code>.</p>
+          <p><strong>Updates:</strong> Get the latest news about the DAO at <a href="https://lunardao.net/">lunardao.net</a> and by following <a href="https://twitter.com/lunarpunksquad">@lunarpunksquad</a>.</p>
+          <p><strong>Contracts:</strong> The DAO is based on Moloch V3 architecture. Check <a href="https://github.com/HausDAO/Baal/tree/feat/baalZodiac/contracts">DAOhaus repo</a> and review the LunarDAO <a href="https://github.com/lunardao/dao/blob/master/README.md#contracts">contracts</a>. </p>
+          <p><strong>Governance:</strong> To learn more about the governance process and how to submit proposals, read the <a href="https://github.com/lunardao/dao">Whitepaper</a> and <a href="https://github.com/lunardao/lip/blob/main/lip-0001.md">LIP-0001</a></p>
+          <p>Go to the <strong><a href="https://admin.daohaus.fun/#/molochv3/0x1/0x747da68facd1459e9d9b8f928418da30769d3ba1">DAO admin app</a></strong>, review the DAO history and take part of shaping the future. </p>
+          <p><strong>Support</strong> LunarDAO <a href="https://lunardao.net/support.html">development</a>.</p>
         <ParMd>
           <Bold>❤️ Donate ❤️</Bold> Make a donation to DAOhaus so these things can stay free and opensource.{" "}
           <Link
