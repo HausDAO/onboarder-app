@@ -11,7 +11,7 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import styled from "styled-components";
 import { LogoContainer } from "../components/LogoContainer";
-import { TARGET_DAO } from "../targetDao";
+import { ABOUTLINKS, TARGET_DAO } from "../targetDao";
 
 const CenterBox = styled.div`
   display: flex;
@@ -49,7 +49,7 @@ export const Home = () => {
         <ParSm>
           Any member can exit at any time. Members are anonymous hence can
           participate in building this vision without fear of frozen funds,
-          legal implications or any kind of repression. See
+          legal implications or any kind of repression. See {" "}
           <Link href="https://wiki.lunardao.net/anonymizing_assets.html">
             Anonymizing assets
           </Link>{" "}
@@ -60,7 +60,7 @@ export const Home = () => {
         </ParSm>
         <ParSm>
           LunarDAO supports research on privacy technologies (listed in the
-          <Link href="https://wiki.lunardao.net">wiki</Link>) and education
+          <Link href={ABOUTLINKS.wiki}>wiki</Link>) and education
           structures such as{" "}
           <Link href="https://adalanacademy.org">Adalan Academy</Link>. This is
           where people can master skills in programming and economics while

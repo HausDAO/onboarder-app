@@ -1,6 +1,6 @@
-import { Bold, H2, ParMd, SingleColumnLayout } from '@daohaus/ui';
-import styled from 'styled-components';
-import { MANIFESTO } from '../targetDao';
+import { Bold, H2, ParMd, Link, SingleColumnLayout } from "@daohaus/ui";
+import styled from "styled-components";
+import { ABOUTLINKS, MANIFESTO } from "../targetDao";
 
 const ContentBox = styled.div`
   h2 {
@@ -17,13 +17,16 @@ export const Manifesto = () => {
     <SingleColumnLayout>
       <ContentBox>
         <H2>{MANIFESTO.title}</H2>
-        {MANIFESTO.sections.map((section) => {
+        {MANIFESTO.sections.map((section, idx) => {
           return (
-            <ParMd key={section.bold}>
+            <ParMd key={idx}>
               <Bold>{section.bold}</Bold> {section.text}
             </ParMd>
           );
         })}
+        <Link href={`${ABOUTLINKS.manifesto}`}>
+          read the full manaifesto here
+        </Link>
       </ContentBox>
     </SingleColumnLayout>
   );

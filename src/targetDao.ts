@@ -19,7 +19,8 @@ export const TARGET_DAO: {
     DELEGATAE_NAME: string;
   };
 } = {
-  "0x747da68facd1459e9d9b8f928418da30769d3ba1": { // must be lowercase
+  "0x747da68facd1459e9d9b8f928418da30769d3ba1": {
+    // must be lowercase
     ADDRESS: "0x747da68facd1459e9d9b8f928418da30769d3ba1",
     SAFE_ADDRESS: "0x59f77dc848c2e45b5954975ee1969e7a22fa25f6",
     CHAIN_ID: "0x1",
@@ -34,7 +35,7 @@ export const TARGET_DAO: {
     STAKE_NEXT_START: 1681664400, // Sunday, April 16, 2023 5:00:00 PM GMT
     NAME: "Lunar Dao",
     DELEGATAE_NAME: "Steward",
-  }
+  },
 };
 
 // export const TARGET_DAO: {
@@ -60,19 +61,41 @@ export const TARGET_DAO: {
 // };
 
 export const MANIFESTO = {
-  title: "The LunarDAO Manifesto",
+  title: `The ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME} Manifesto`,
   sections: [
     {
-      bold: "We envision a future.",
-      text: "https://wiki.lunardao.net/manifesto.html",
+      bold: "The Leviathan.",
+      text: "Information is power. Privacy and transparency are two antithetical dimensions of information. Transparency must apply to those in power, to lay open their machinations and hold them accountable. This includes any government, supranational entity, corporations and conglomerates. Privacy is for the people, to prevent the agents of power from intruding in the innermost parts of our individual and social existence.",
+    },
+    {
+      bold: "",
+      text: "The mouthpieces of the surveillance state claim that our sanctuaries and agoras are enabling criminals to sell drugs, weapons and human beings, and laundering money through cryptocurrencies. They use this as an excuse to block our access to DeFi and privacy tools and limit our autonomy. All the while the crimes we stand accused of are carried out day by day on a massive scale by well-connected and legally protected people, aided by national governments, their courts and law enforcement bodies. While attacking tools that empower people, they commandeer the black market and launder money through esteemed international banks.",
+    },
+    {
+      bold: "",
+      text: "So-called democratic nation-states openly make profit by entertaining economic relations with regimes they pretend to reject. Especially when it comes to war industry, these profitable relations are carried out against international conventions these states promoted themselves. Armaments are sold to regimes and used against civilians and liberation movements in the name of profit.",
+    },
+    {
+      bold: "",
+      text: "Hegemonic nation-states and their financial institutions have control over our lives. As long as we depend on their money we have no choice but to live under the dominion of empires. Banks track and control the money flow and can freeze assets at any time. They tempt us with the illusion of wealth, making us believe that we are part of the big game, when really we are expropriated. We are the yield.",
+    },
+    {
+      bold: "...",
+      text: "",
     },
   ],
 };
 
 export const ABOUTLINKS = {
-  discussion: "https://discord.gg/daohaus",
-  twitter: "https://twitter.com/nowdaoit",
+  discussion: "https://forum.lunardao.net",
+  ircd: "https://ircd.lunardao.net",
+  telegram: "https://t.me/lunardao",
+  twitter: "https://twitter.com/lunarpunksquad",
   github: "https://github.com/HausDAO/",
+  whitepaper: "https://github.com/lunardao/dao",
+  manifesto: "https://wiki.lunardao.net/manifesto.html",
+  website: "https://lunardao.net",
   githubOnboarder: "https://github.com/HausDAO/publichaus",
-  donationLink: "https://vermillion-centaur-a3de87.netlify.app/"
+  donationLink: "https://vermillion-centaur-a3de87.netlify.app/",
+  wiki: "https://wiki.lunardao.net",
 };
