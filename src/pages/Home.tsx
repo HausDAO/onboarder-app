@@ -44,7 +44,11 @@ export const Home = () => {
           allocating funds in privacy projects & anonymity tooling we aim to
           expand freedom and ensure sovereignty. Squad wealth leverages
           collective strength and captures value in the ecosystem by building a
-          portfolio of privacy assets.{" "}
+          portfolio of privacy assets. Researched solutions and primitives are 
+          listed in LunarDAO Investment Portal {" "}
+          <Link href="https://github.com/lunardao/research/blob/master/investment_portal/README.md">
+            here
+          </Link>
         </ParSm>
         <ParSm>
           Any member can exit at any time. Members are anonymous hence can
@@ -91,7 +95,12 @@ export const Home = () => {
         </ParMd>
         <H3>Step 3: Vote On Proposal</H3>
         <ParMd>
-          All proposals can be found [here](insert link). Participate in voting
+          All proposals can be found {" "}
+          <Link href={`https://admin.daohaus.fun/#/molochv3/${
+                TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID
+              }/${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].ADDRESS}`}>
+                here
+          </Link>. Participate in voting
           to direct the DAO investments and contribute to DAO development.
         </ParMd>
       </CenterBox>
