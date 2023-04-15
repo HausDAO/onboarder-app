@@ -1,6 +1,7 @@
 import { POSTER_TAGS, TXLego } from '@daohaus/utils';
 import { buildMultiCallTX } from '@daohaus/tx-builder';
 import { CONTRACT } from './contract';
+import { TARGET_DAO } from '../targetDao';
 
 export enum ProposalTypeIds {
   Signal = 'SIGNAL',
@@ -48,7 +49,7 @@ export const APP_TX: Record<string, TXLego> = {
               },
               title: {
                 type: 'static',
-                value: 'Mantis Delegate',
+                value: `${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME} Delegate`,
               },
               description: {
                 type: 'static',
