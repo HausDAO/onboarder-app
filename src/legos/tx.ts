@@ -49,7 +49,7 @@ export const APP_TX: Record<string, TXLego> = {
               },
               title: {
                 type: 'static',
-                value: `${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME} Delegate`,
+                value: `${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME} ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`,
               },
               description: {
                 type: 'static',
