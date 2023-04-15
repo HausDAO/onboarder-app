@@ -54,7 +54,7 @@ export const CredentialDisplay = ({
     <CredentialBox>
       {latestRecord && !showAll ? (
         <Credential
-          credTitle={latestRecord.title}
+          credTitle={`${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME} ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`}
           createdAt={latestRecord.createdAt}
           credDescription={latestRecord.description}
           userDescription={latestRecord.longDescription}
@@ -66,7 +66,7 @@ export const CredentialDisplay = ({
             return (
               <Credential
                 key={index}
-                credTitle={record.title}
+                credTitle={`${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME} ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`}
                 createdAt={record.createdAt}
                 credDescription={record.description}
                 userDescription={record.longDescription}
