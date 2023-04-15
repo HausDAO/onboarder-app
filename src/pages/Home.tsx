@@ -43,19 +43,17 @@ export const Home = () => {
       </CenterBox>
       <CenterBox>
         <ParLg>How to Participate</ParLg>
-        <ParSm>Free software isn't free. Take direct action and fund the teams that
-           keep the dream alive. Fund the projects you want how much you want all while having full custody
-           of your funds. </ParSm>
+        
         <H3>Step 1: READ</H3> 
         <ParMd>
           Read about Yeeter Funding in {" "} 
           <StyledRouterLink to="/manifesto">About Yeeter</StyledRouterLink>{" "} 
           and look at the
           <Link
-            href={`https://en.wikipedia.org/wiki/Mantis`}
+            href={`https://hackmd.io/@Dekan/rkHwzduMn`}
             style={{ marginBottom: "2rem" }}
           >
-            project Spec
+            Project Spec and (lunarDAO) Case study
           </Link>{" "}
           for the current project to see if you are interested in funding.
         </ParMd>
@@ -68,9 +66,9 @@ export const Home = () => {
           <H3>Step 3: GET RETROED</H3>
         <ParMd>
           The executing team is <StyledRouterLink to="/delegates">here</StyledRouterLink>.
-          Development and project progress will be transparently tracked in the DAO. 
+          Development and project progress will be transparently tracked from the DAO admin. 
           Funders can always rugquit and get their funds back or hangout and get retroed.
-          All project based yeeters are eligible for PublicHAUS retroactive rewards.
+          All project based yeeters are eligible for PublicHAUS (and other) retroactive rewards.
         </ParMd>
         <ParMd>
           * Core membership requires a DAO vote to ensure you are a real person,

@@ -48,7 +48,7 @@ export const APP_TX: Record<string, TXLego> = {
               },
               title: {
                 type: 'static',
-                value: 'Mantis Delegate',
+                value: 'Core Executor Team',
               },
               description: {
                 type: 'static',
