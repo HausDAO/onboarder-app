@@ -191,15 +191,24 @@ export const Join = () => {
       <StakeBox>
         {user && parseInt(user.shares) > 0 ? (
           <>
-            <H2>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}</H2>
+            <H2>
+              Stake{" "}
+              {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}
+            </H2>
             <ParLg>
-              Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} for more DAO shares
+              Stake{" "}
+              {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}{" "}
+              for more DAO shares
             </ParLg>
           </>
         ) : (
           <>
             <H2>Join {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME}</H2>
-            <ParLg>Stake {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL} to Join</ParLg>
+            <ParLg>
+              Stake{" "}
+              {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_TOKEN_SYMBOL}{" "}
+              to Join
+            </ParLg>
           </>
         )}
         <DataGrid>
@@ -211,7 +220,9 @@ export const Join = () => {
         </DataGrid>
         <Divider className="space" />
         <MembershipSection user={user as Member | null} balance={balance} />
-        {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_PAUSED ? (
+        {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_NEXT_START >
+          Date.now() / 1000 ||
+        TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_PAUSED ? (
           <Card className="space">
             <ParMd>Staking is currently paused. Please check back later.</ParMd>
           </Card>

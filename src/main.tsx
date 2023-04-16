@@ -3,7 +3,12 @@ import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { DHConnectProvider } from "@daohaus/connect";
-import { Banner, HausThemeProvider, ThemeOverrides, defaultDarkTheme } from "@daohaus/ui";
+import {
+  Banner,
+  HausThemeProvider,
+  ThemeOverrides,
+  defaultDarkTheme,
+} from "@daohaus/ui";
 import { Buffer } from "buffer";
 
 import { Routes } from "./Routes";
@@ -64,13 +69,16 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           daoChainId={TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID}
         >
           <HausThemeProvider>
-          {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_PAUSED && (
-          <Banner
-            bannerText={`Open staking is paused, next round begins ${new Date(
-              TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_NEXT_START * 1000
-            ).toDateString()}`}
-          />
-        )}
+            {(TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_NEXT_START >
+              Date.now() / 1000 ||
+              TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_PAUSED) && (
+              <Banner
+                bannerText={`Open staking is paused, next round begins ${new Date(
+                  TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_NEXT_START *
+                    1000
+                ).toDateString()}`}
+              />
+            )}
             <Routes />
           </HausThemeProvider>
         </DHConnectProvider>
