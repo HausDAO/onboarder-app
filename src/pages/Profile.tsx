@@ -118,7 +118,7 @@ export const Profile = () => {
               variant="outline"
               fullWidth={isMobile}
             >
-              ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}S
+              {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}s
             </ButtonRouterLink>
             <Button
               IconLeft={BsShareFill}

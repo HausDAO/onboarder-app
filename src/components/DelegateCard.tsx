@@ -143,7 +143,7 @@ export const DelegateCard = ({
         size="sm"
         color="secondary"
       >
-        See ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}
+        See {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}
       </ButtonRouterLink>
     </DelegateCardBox>
   );
