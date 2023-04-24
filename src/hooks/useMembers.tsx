@@ -1,17 +1,17 @@
-import { useQuery } from 'react-query';
+import { useQuery } from "react-query";
 
-import { ValidNetwork, Keychain } from '@daohaus/keychain-utils';
+import { ValidNetwork, Keychain } from "@daohaus/keychain-utils";
 import {
   listMembers,
   Member_OrderBy,
   Member_Filter,
-} from '@daohaus/moloch-v3-data';
-import { Paging, Ordering } from '@daohaus/data-fetch-utils';
-import { Member, MemberWithProfile } from '../utils/types';
-import { handleErrorMessage } from '@daohaus/utils';
-import { fetchProfile } from '../utils/cacheProfile';
+} from "@daohaus/moloch-v3-data";
+import { Paging, Ordering } from "@daohaus/data-fetch-utils";
+import { Member, MemberWithProfile } from "../utils/types";
+import { handleErrorMessage } from "@daohaus/utils";
+import { fetchProfile } from "../utils/cacheProfile";
 
-const defaultGraphKeys = { '0x1': import.meta.env.VITE_GRAPH_API_KEY_MAINNET };
+const defaultGraphKeys = { "0x64": import.meta.env.VITE_GRAPH_API_KEY_MAINNET };
 
 const fetchMembers = async ({
   chainId,
@@ -45,7 +45,7 @@ const fetchMembers = async ({
   } catch (error) {
     console.error(error);
     throw new Error(
-      handleErrorMessage({ error, fallback: 'Error fetching members' })
+      handleErrorMessage({ error, fallback: "Error fetching members" })
     );
   }
 };
@@ -55,7 +55,7 @@ export const useMembers = ({
   chainId,
   filter,
   paging = { pageSize: 500, offset: 0 },
-  ordering = { orderDirection: 'desc', orderBy: 'shares' },
+  ordering = { orderDirection: "desc", orderBy: "shares" },
   graphApiKeys = defaultGraphKeys,
 }: {
   daoId: string;
@@ -68,7 +68,7 @@ export const useMembers = ({
   const defaultFilter = filter || { dao: daoId };
 
   const { data, error, ...rest } = useQuery(
-    ['molochV3Members', { daoId, chainId }],
+    ["molochV3Members", { daoId, chainId }],
     () =>
       fetchMembers({
         chainId,

@@ -1,16 +1,16 @@
-import { getGraphUrl, Keychain, ValidNetwork } from '@daohaus/keychain-utils';
+import { getGraphUrl, Keychain, ValidNetwork } from "@daohaus/keychain-utils";
 
-import { graphFetch } from '@daohaus/data-fetch-utils';
+import { graphFetch } from "@daohaus/data-fetch-utils";
 import {
   FindMemberDocument,
   FindMemberQuery,
   FindMemberQueryVariables,
-} from '@daohaus/moloch-v3-data';
-import { useQuery } from 'react-query';
-import { handleErrorMessage } from '@daohaus/utils';
+} from "@daohaus/moloch-v3-data";
+import { useQuery } from "react-query";
+import { handleErrorMessage } from "@daohaus/utils";
 
 const defaultGraphApiKeys = {
-  '0x1': import.meta.env.VITE_GRAPH_API_KEY_MAINNET,
+  "0x64": import.meta.env.VITE_GRAPH_API_KEY_MAINNET,
 };
 
 const findUserMember = async ({
@@ -26,7 +26,7 @@ const findUserMember = async ({
 }) => {
   const url = getGraphUrl(chainId, graphApiKeys);
 
-  if (!url) throw new Error('No graph url found for network: ' + chainId);
+  if (!url) throw new Error("No graph url found for network: " + chainId);
 
   try {
     const res = await graphFetch<FindMemberQuery, FindMemberQueryVariables>(
@@ -42,7 +42,7 @@ const findUserMember = async ({
   } catch (error) {
     console.error(error);
     throw new Error(
-      handleErrorMessage({ fallback: 'Error fetching user member', error })
+      handleErrorMessage({ fallback: "Error fetching user member", error })
     );
   }
 };
@@ -69,8 +69,13 @@ export const useUserMember = ({
       }),
     { enabled: !!chainId && !!daoId && !!memberAddress }
   );
-  console.log('data', data);
-  console.log('!!chainId && !!daoId && !!memberAddress', chainId, daoId, memberAddress);
+  console.log("data", data);
+  console.log(
+    "!!chainId && !!daoId && !!memberAddress",
+    chainId,
+    daoId,
+    memberAddress
+  );
 
   return { user: data, error: error as Error, ...rest, isMember: !!data };
 };

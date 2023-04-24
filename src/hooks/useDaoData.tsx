@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { MolochV3Dao, findDao } from '@daohaus/moloch-v3-data';
-import { Keychain, ValidNetwork } from '@daohaus/keychain-utils';
-import { useQuery } from 'react-query';
-import { handleErrorMessage } from '@daohaus/utils';
+import { MolochV3Dao, findDao } from "@daohaus/moloch-v3-data";
+import { Keychain, ValidNetwork } from "@daohaus/keychain-utils";
+import { useQuery } from "react-query";
+import { handleErrorMessage } from "@daohaus/utils";
 
-const defaultGraphKeys = { '0x1': import.meta.env.VITE_GRAPH_API_KEY_MAINNET };
+const defaultGraphKeys = { "0x64": import.meta.env.VITE_GRAPH_API_KEY_MAINNET };
 
 export const fetchDao = async ({
   daoid,
@@ -27,12 +27,12 @@ export const fetchDao = async ({
     if (daoRes?.data?.dao) {
       return daoRes.data.dao as MolochV3Dao;
     } else {
-      console.error('no dao found');
+      console.error("no dao found");
     }
   } catch (error) {
     console.error(error);
     throw new Error(
-      handleErrorMessage({ error, fallback: 'Error fetching DAO' })
+      handleErrorMessage({ error, fallback: "Error fetching DAO" })
     );
   }
 };
@@ -47,7 +47,7 @@ export const useDaoData = ({
   graphApiKeys?: Keychain;
 }) => {
   const { data, error, ...rest } = useQuery(
-    ['MolochV3DAO', { daoid, daochain }],
+    ["MolochV3DAO", { daoid, daochain }],
     () => fetchDao({ daoid, daochain, graphApiKeys }),
     { enabled: !!daoid && !!daochain }
   );

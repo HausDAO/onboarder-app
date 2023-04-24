@@ -1,10 +1,10 @@
-import { findMember } from '@daohaus/moloch-v3-data';
-import { ValidNetwork, Keychain } from '@daohaus/keychain-utils';
-import { useQuery } from 'react-query';
-import { fetchProfile } from '../utils/cacheProfile';
-import { MolochV3Member } from '@daohaus/moloch-v3-data';
-import { handleErrorMessage } from '@daohaus/utils';
-const defaultGraphKeys = { '0x1': import.meta.env.VITE_GRAPH_API_KEY_MAINNET };
+import { findMember } from "@daohaus/moloch-v3-data";
+import { ValidNetwork, Keychain } from "@daohaus/keychain-utils";
+import { useQuery } from "react-query";
+import { fetchProfile } from "../utils/cacheProfile";
+import { MolochV3Member } from "@daohaus/moloch-v3-data";
+import { handleErrorMessage } from "@daohaus/utils";
+const defaultGraphKeys = { "0x64": import.meta.env.VITE_GRAPH_API_KEY_MAINNET };
 
 const fetchMember = async ({
   chainId,
@@ -20,20 +20,20 @@ const fetchMember = async ({
   try {
     const data = await findMember({
       networkId: chainId,
-      graphApiKeys,
       dao: daoId,
       memberAddress: memberAddress.toLowerCase(),
+      graphApiKeys,
     });
 
     const profile = await fetchProfile(memberAddress);
     if (!data?.data?.member || !profile)
-      throw new Error('No member or profile found');
+      throw new Error("No member or profile found");
 
     return { ...(data.data.member as MolochV3Member), profile };
   } catch (error) {
     console.error(error);
     throw new Error(
-      handleErrorMessage({ error, fallback: 'Error fetching member' })
+      handleErrorMessage({ error, fallback: "Error fetching member" })
     );
   }
 };

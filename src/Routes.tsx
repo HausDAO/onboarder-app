@@ -5,19 +5,19 @@ import { LayoutContainer } from "./components/LayoutContainer";
 import Dao from "./pages/Dao";
 import { TARGET_DAO } from "./targetDao";
 
-import { DHLayout, useDHConnect } from '@daohaus/connect';
-import { Delegates } from './pages/Delegates';
-import { Application } from './pages/Application';
-import { Profile } from './pages/Profile';
-import { TXBuilder } from '@daohaus/tx-builder';
-import { Join } from './pages/Join';
-import { Manifesto } from './pages/Manifesto';
-import { Unstake } from './pages/Unstake';
-import { Delegate } from './pages/Delegate';
-import { Claim } from './pages/Claim';
-import { useDaoData } from './hooks/useDaoData';
-import { HeaderAvatar } from './components/HeaderAvatar';
-import { About } from './pages/About';
+import { DHLayout, useDHConnect } from "@daohaus/connect";
+import { Delegates } from "./pages/Delegates";
+import { Application } from "./pages/Application";
+import { Profile } from "./pages/Profile";
+import { TXBuilder } from "@daohaus/tx-builder";
+import { Join } from "./pages/Join";
+import { Manifesto } from "./pages/Manifesto";
+import { Unstake } from "./pages/Unstake";
+import { Delegate } from "./pages/Delegate";
+import { Claim } from "./pages/Claim";
+import { useDaoData } from "./hooks/useDaoData";
+import { HeaderAvatar } from "./components/HeaderAvatar";
+import { About } from "./pages/About";
 
 const routePath = `molochv3/${
   TARGET_DAO[import.meta.env.VITE_TARGET_KEY].CHAIN_ID
@@ -45,12 +45,12 @@ export const Routes = () => {
       <DHLayout
         pathname={pathname}
         navLinks={[
-          { label: 'Home', href: '/' },
-          { label: 'About Yeeter', href: '/manifesto' },
-          { label: 'Fund', href: '/join' },
-          { label: 'Core Team', href: '/delegates' },
-          { label: 'Apply for Core', href: '/apply' },
-          { label: 'Next', href: '/about' },
+          { label: "Home", href: "/" },
+          // { label: 'About Yeeter', href: '/manifesto' },
+          { label: "Fund", href: "/join" },
+          { label: "Core Team", href: "/delegates" },
+          // { label: 'Apply for Core', href: '/apply' },
+          { label: "Next", href: "/about" },
         ]}
         leftNav={
           dao?.name &&
@@ -62,7 +62,6 @@ export const Routes = () => {
             />
           )
         }
-        
       >
         <Router>
           <Route path="/" element={<Home />} />
@@ -80,4 +79,3 @@ export const Routes = () => {
     </TXBuilder>
   );
 };
-

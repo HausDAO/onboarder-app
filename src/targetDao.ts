@@ -32,7 +32,22 @@ export const TARGET_DAO: {
     STAKE_PAUSED: false,
     STAKE_NEXT_START: 1677513600,
     TARGET_THRESHOLD: "10000000000000000000",
-  }
+  },
+  "0xe11f0eb60de58f62b77bda48bbda23056b2a5170": {
+    ADDRESS: "0xe11f0eb60de58f62b77bda48bbda23056b2a5170",
+    SAFE_ADDRESS: "0x4db5161f20572d44d09a034b601d85db7e809ae8",
+    CHAIN_ID: "0x64",
+    SHARE_ADDRESS: "0xabc37bb1fce153ca6f27149739b3939415e55777",
+    LOOT_ADDRESS: "0xf02244ea07544932467b94eacec1a3ad2448e189",
+    STAKE_TOKEN: "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6", // not used
+    STAKE_TOKEN_NAME: "XDAI",
+    STAKE_TOKEN_SYMBOL: "XDAI",
+    STAKE_TOKEN_DECIMALS: 18,
+    SHAMAN_ADDRESS: "0xba71177cc7718cc1d662635a38c3729cf113f239",
+    STAKE_PAUSED: false,
+    STAKE_NEXT_START: 1677513600,
+    TARGET_THRESHOLD: "25000000000000000000",
+  },
 };
 
 // export const TARGET_DAO: {
@@ -66,25 +81,24 @@ export const MANIFESTO = {
     },
     {
       bold: "Easiest Way to Fund a Project",
-      text: "With customizable parameters, the Yeeter contract allows you to determine the contribution range, start and end times, and maximum capitalization."
+      text: "With customizable parameters, the Yeeter contract allows you to determine the contribution range, start and end times, and maximum capitalization.",
     },
     {
       bold: "Minority Protections and Exit Options",
-      text: "By preserving the option to exit, Yeeters' contributions are protected and funds are safu. As members of the DAO, Yeeters can withdraw their portion of the funds at any time by ragequitting. Your organization is decentralized from day 1."
+      text: "By preserving the option to exit, Yeeters' contributions are protected and funds are safu. As members of the DAO, Yeeters can withdraw their portion of the funds at any time by ragequitting. Your organization is decentralized from day 1.",
     },
     {
       bold: "Community Driven",
-      text: "Transparent and open-source, Yeeter is an exciting new fundraising primitive built by the DAOhaus community."
+      text: "Transparent and open-source, Yeeter is an exciting new fundraising primitive built by the DAOhaus community.",
     },
     {
       bold: "Funders Rewarded",
-      text: "Through quaterliy retroactive rewards, Yeeters are rewarded for their contributions to the DAO."
+      text: "Through quaterliy retroactive rewards, Yeeters are rewarded for their contributions to the DAO.",
     },
     {
       bold: "Sophisticated Smart Contracts to Serve Your Community",
       text: "With your project on Y33T, contributors send tokens in the form of xDAI or ETH. The Yeeter smart contract forwards those funds into a treasury, creating stake for contributors. The result is a DAO, with a crowdfunded treasury, managed by the project team and supported by contributors.",
-    }
-
+    },
   ],
 };
 
