@@ -71,12 +71,18 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <HausThemeProvider>
             {(TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_NEXT_START >
               Date.now() / 1000 ||
-              TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_PAUSED) && (
+              (TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_NEXT_START !=
+                0 && TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_PAUSED)) ? (
               <Banner
                 bannerText={`Open staking is paused, next round begins ${new Date(
                   TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_NEXT_START *
                     1000
                 ).toDateString()}`}
+              />
+            ) : TARGET_DAO[import.meta.env.VITE_TARGET_KEY].STAKE_NEXT_START ==
+            0 && (
+              <Banner
+                bannerText={`Open staking is paused.`}
               />
             )}
             <Routes />

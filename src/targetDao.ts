@@ -32,7 +32,7 @@ export const TARGET_DAO: {
     STAKE_TOKEN_DECIMALS: 18,
     SHAMAN_ADDRESS: "0xfd7f0d849c1820f066ad1dea8c8b90a59ca51ef0",
     STAKE_PAUSED: true, // override next start
-    STAKE_NEXT_START: 1685577600, // jun 1, old: 1681664400, // Sunday, April 16, 2023 5:00:00 PM GMT
+    STAKE_NEXT_START: 0, // jun 1, old: 1681664400, // Sunday, April 16, 2023 5:00:00 PM GMT
     NAME: "Lunar Dao",
     DELEGATAE_NAME: "Steward",
   },
