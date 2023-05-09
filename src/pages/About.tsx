@@ -54,7 +54,7 @@ export const About = () => {
         </ParMd>
         <ParMd>
           <Bold>Squad Coins:</Bold> Are you looking to summon a squad coin?{" "}
-          <Link href="https://melodious-fox-e43d87.netlify.app/">
+          <Link href="https://squad-coins.netlify.app/">
             Squad Coin Summoner
           </Link>{" "}
           .{" "}
