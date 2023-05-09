@@ -20,37 +20,24 @@ export const About = () => {
         <ParMd>
           <Bold>Community:</Bold> Join the discussion on the{" "}
           <Link href={ABOUTLINKS.discussion}>forum</Link>,{" "}
-          <Link href={ABOUTLINKS.ircd}>ircd</Link> and{" "}
-          <Link href={ABOUTLINKS.telegram}>Telegram</Link>. Community
-          meetings take place on ircd on Monday 17UTC, channel{" "}
-          <code>#lunardao</code>.
         </ParMd>
-        <ParMd>
+        {/* <ParMd>
           <Bold>Updates:</Bold> Get the latest news about the DAO at{" "}
-          <Link href={ABOUTLINKS.website}>lunardao.net</Link> and by
+          <Link href={ABOUTLINKS.website}>big squad</Link> and by
           following{" "}
-          <Link href={ABOUTLINKS.twitter}>@lunarpunksquad</Link>
+          <Link href={ABOUTLINKS.twitter}>big squad</Link>
           .
-        </ParMd>
+        </ParMd> */}
         <ParMd>
           <Bold>Contracts:</Bold> The DAO is based on Moloch V3 architecture.
           Check{" "}
           <Link href="https://github.com/HausDAO/Baal/tree/feat/baalZodiac/contracts">
             DAOhaus repo
           </Link>{" "}
-          and review the LunarDAO{" "}
-          <Link href="https://github.com/lunardao/dao/blob/master/README.md#contracts">
-            contracts
-          </Link>
           .{" "}
         </ParMd>
         <ParMd>
-          <Bold>Governance:</Bold> To learn more about the governance process
-          and how to submit proposals, read the{" "}
-          <Link href={ABOUTLINKS.whitepaper}>Whitepaper</Link> and{" "}
-          <Link href="https://github.com/lunardao/lip/blob/main/lip-0001.md">
-            LIP-0001
-          </Link>
+          <Bold>Governance:</Bold> 
         </ParMd>
         <ParMd>
           Go to the{" "}
@@ -66,16 +53,13 @@ export const About = () => {
           , review the DAO history and take part of shaping the future.{" "}
         </ParMd>
         <ParMd>
-          <Bold>Support</Bold> LunarDAO{" "}
-          <Link href={`${ABOUTLINKS.website}/support.html`}>development</Link>.
+          <Bold>Squad Coins:</Bold> Are you looking to summon a squad coin?{" "}
+          <Link href="https://melodious-fox-e43d87.netlify.app/">
+            Squad Coin Summoner
+          </Link>{" "}
+          .{" "}
         </ParMd>
-        <ParMd>
-          <Bold>❤️ Donate ❤️</Bold> Make a donation to DAOhaus so these things
-          can stay free and opensource.{" "}
-          <Link href={ABOUTLINKS.donationLink} style={{ marginBottom: "2rem" }}>
-            DaoHaus Onboarder
-          </Link>
-        </ParMd>
+        
       </ContentBox>
     </SingleColumnLayout>
   );

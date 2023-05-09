@@ -19,21 +19,21 @@ export const TARGET_DAO: {
     DELEGATAE_NAME: string;
   };
 } = {
-  "0x747da68facd1459e9d9b8f928418da30769d3ba1": {
+  "0xb302ea414fa7bfa6f8fcbaa05262f01d741062f3": {
     // must be lowercase
-    ADDRESS: "0x747da68facd1459e9d9b8f928418da30769d3ba1",
+    ADDRESS: "0xb302ea414fa7bfa6f8fcbaa05262f01d741062f3",
     SAFE_ADDRESS: "0x59f77dc848c2e45b5954975ee1969e7a22fa25f6",
-    CHAIN_ID: "0x1",
-    SHARE_ADDRESS: "0x33e6ded5073f512475e17b5f19dda90d9a782478",
-    LOOT_ADDRESS: "0x94fadf770e44b7bc872fc712e4ba6aaf096fcba7",
+    CHAIN_ID: "0xa4b1",
+    SHARE_ADDRESS: "0x3af190b273c1645fdace99d12d9c055be93e2b1d",
+    LOOT_ADDRESS: "0x5912ef751dde14d92e307aa14cd4036f2b815368",
     STAKE_TOKEN: "0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6", // weth
-    STAKE_TOKEN_NAME: "Ethereum",
-    STAKE_TOKEN_SYMBOL: "ETH",
+    STAKE_TOKEN_NAME: "Arbitrum ETH",
+    STAKE_TOKEN_SYMBOL: "aETH",
     STAKE_TOKEN_DECIMALS: 18,
-    SHAMAN_ADDRESS: "0xfd7f0d849c1820f066ad1dea8c8b90a59ca51ef0",
-    STAKE_PAUSED: true, // override next start
-    STAKE_NEXT_START: 0, // jun 1, old: 1681664400, // Sunday, April 16, 2023 5:00:00 PM GMT
-    NAME: "Lunar Dao",
+    SHAMAN_ADDRESS: "0x99aab1ce9bf5c32ed0112e9693a42ddf0138273c",
+    STAKE_PAUSED: false, // override next start
+    STAKE_NEXT_START: 1, // jun 1, old: 1681664400, // Sunday, April 16, 2023 5:00:00 PM GMT
+    NAME: "Big Squad Dao",
     DELEGATAE_NAME: "Steward",
   },
 };
@@ -64,20 +64,20 @@ export const MANIFESTO = {
   title: `The ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].NAME} Manifesto`,
   sections: [
     {
-      bold: "The Leviathan.",
-      text: "Information is power. Privacy and transparency are two antithetical dimensions of information. Transparency must apply to those in power, to lay open their machinations and hold them accountable. This includes any government, supranational entity, corporations and conglomerates. Privacy is for the people, to prevent the agents of power from intruding in the innermost parts of our individual and social existence.",
+      bold: "The Big Squad DAO",
+      text: " is to alighn all Squads with a shared but initialy non ragequitable treasury. Tokens are initialy non transferable and members make proposals to manage the mission, roadmap and treasury.",
     },
     {
       bold: "",
-      text: "The mouthpieces of the surveillance state claim that our sanctuaries and agoras are enabling criminals to sell drugs, weapons and human beings, and laundering money through cryptocurrencies. They use this as an excuse to block our access to DeFi and privacy tools and limit our autonomy. All the while the crimes we stand accused of are carried out day by day on a massive scale by well-connected and legally protected people, aided by national governments, their courts and law enforcement bodies. While attacking tools that empower people, they commandeer the black market and launder money through esteemed international banks.",
+      text: "",
     },
     {
       bold: "",
-      text: "So-called democratic nation-states openly make profit by entertaining economic relations with regimes they pretend to reject. Especially when it comes to war industry, these profitable relations are carried out against international conventions these states promoted themselves. Armaments are sold to regimes and used against civilians and liberation movements in the name of profit.",
+      text: "",
     },
     {
       bold: "",
-      text: "Hegemonic nation-states and their financial institutions have control over our lives. As long as we depend on their money we have no choice but to live under the dominion of empires. Banks track and control the money flow and can freeze assets at any time. They tempt us with the illusion of wealth, making us believe that we are part of the big game, when really we are expropriated. We are the yield.",
+      text: "",
     },
     {
       bold: "...",
@@ -87,15 +87,15 @@ export const MANIFESTO = {
 };
 
 export const ABOUTLINKS = {
-  discussion: "https://forum.lunardao.net",
-  ircd: "https://ircd.lunardao.net",
-  telegram: "https://t.me/lunardao",
-  twitter: "https://twitter.com/lunarpunksquad",
+  discussion: "https://discord.gg/daohaus",
+  ircd: "",
+  telegram: "",
+  twitter: "https://twitter.com/nowdaoit",
   github: "https://github.com/HausDAO/",
-  whitepaper: "https://github.com/lunardao/dao",
-  manifesto: "https://wiki.lunardao.net/manifesto.html",
-  website: "https://lunardao.net",
+  whitepaper: "",
+  manifesto: "",
+  website: "https://daohaus.club",
   githubOnboarder: "https://github.com/HausDAO/publichaus",
-  donationLink: "https://vermillion-centaur-a3de87.netlify.app/",
-  wiki: "https://wiki.lunardao.net",
+  donationLink: "",
+  wiki: "",
 };

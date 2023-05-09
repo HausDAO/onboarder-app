@@ -45,11 +45,11 @@ export const Routes = () => {
       <DHLayout
         pathname={pathname}
         navLinks={[
-          { label: 'Home', href: '/' },
+          // { label: 'Home', href: '/' },
+          { label: 'Stake', href: '/' },
           { label: 'Manifesto', href: '/manifesto' },
-          { label: 'Stake', href: '/join' },
-          { label: `${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`, href: '/delegates' },
-          { label: `Become a ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`, href: '/apply' },
+          // { label: `${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`, href: '/delegates' },
+          // { label: `Become a ${TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}`, href: '/apply' },
           { label: 'Next', href: '/about' },
         ]}
         leftNav={
@@ -65,11 +65,11 @@ export const Routes = () => {
         
       >
         <Router>
-          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Home />} /> */}
           <Route path="/manifesto" element={<Manifesto />} />
           <Route path="/apply" element={<Application />} />
           <Route path="/delegates" element={<Delegates />} />
-          <Route path="/join" element={<Join />} />
+          <Route path="/" element={<Join />} />
           <Route path="/profile/:memberAddress" element={<Profile />} />
           <Route path="/unstake" element={<Unstake />} />
           <Route path="/delegate" element={<Delegate />} />

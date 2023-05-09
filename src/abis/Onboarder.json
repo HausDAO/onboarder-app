@@ -82,7 +82,7 @@
   },
   {
     "inputs": [],
-    "name": "expiery",
+    "name": "expiry",
     "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
     "stateMutability": "view",
     "type": "function"
@@ -90,7 +90,7 @@
   {
     "inputs": [
       { "internalType": "address", "name": "_moloch", "type": "address" },
-      { "internalType": "uint256", "name": "_expiery", "type": "uint256" },
+      { "internalType": "uint256", "name": "_expiry", "type": "uint256" },
       { "internalType": "uint256", "name": "_multiply", "type": "uint256" },
       { "internalType": "uint256", "name": "_minTribute", "type": "uint256" },
       { "internalType": "bool", "name": "_isShares", "type": "bool" },

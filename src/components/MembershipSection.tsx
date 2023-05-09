@@ -62,7 +62,7 @@ export const MembershipSection = ({
       {user ? (
         <ParLg>
           You are a member{" "}
-          <StyledRouterLink to="/unstake">unstake</StyledRouterLink>
+          {/* <StyledRouterLink to="/unstake">unstake</StyledRouterLink> */}
         </ParLg>
       ) : (
         <ParLg>You are not a member of this DAO</ParLg>
@@ -107,32 +107,7 @@ export const MembershipSection = ({
           }
         />
       </DataGrid>
-      <Divider className={user ? "space" : ""} />
-      {user && (
-        <>
-          <ParLg className="space">Verification Status:</ParLg>
-          {latestRecord ? (
-            <>
-              <ParMd className="small-space">
-                The DAO are verified 
-              </ParMd>
-              <StyledRouterLink to={`/profile/${address}`} className="space">
-                View your profile here
-              </StyledRouterLink>
-            </>
-          ) : (
-            <>
-              <ParMd className="small-space">
-                You are not yet verified to be a {TARGET_DAO[import.meta.env.VITE_TARGET_KEY].DELEGATAE_NAME}. (optional)
-              </ParMd>
-              <StyledRouterLink to={`/apply`} className="space">
-                Verify here
-              </StyledRouterLink>
-            </>
-          )}
-          <Divider className="space" />
-        </>
-      )}
+
     </MembershipBox>
   );
 };

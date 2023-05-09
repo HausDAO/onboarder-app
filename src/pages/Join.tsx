@@ -212,8 +212,8 @@ export const Join = () => {
           </>
         )}
         <DataGrid>
-          <DataIndicator label="Stake Ratio:" data={`1:100`} size="sm" />
-          <DataIndicator label="Fee:" data={`.25%`} size="sm" />
+          <DataIndicator label="Stake Ratio:" data={`1:1000`} size="sm" />
+          <DataIndicator label="Fee: (public goods)" data={`3%`} size="sm" />
 
           {expiry && <ExpiryIndicator expiry={expiry} />}
           {minTribute && <MinTributeIndicator minTribute={minTribute} />}

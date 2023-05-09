@@ -34,9 +34,13 @@ const fetchOnboarder = async ({
     rpcs,
   });
 
+  console.log('shamanContract*************', shamanContract);
+  console.log('shamanAddress*************', shamanAddress);
+  
+
   try {
     const baal = fetchShape?.baal ? await shamanContract.baal() : null;
-    const expiry = fetchShape?.expiry ? await shamanContract.expiery() : null;
+    const expiry = fetchShape?.expiry ? await shamanContract.expiry() : null;
     const token = fetchShape?.token ? await shamanContract.token() : null;
     const minTribute = fetchShape?.minTribute ? await shamanContract.minTribute() : null;
 
